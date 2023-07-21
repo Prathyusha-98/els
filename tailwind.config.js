@@ -18,6 +18,9 @@ module.exports = {
       textShadow: {
         md: '0px 4px 20px 0px rgba(0, 0, 0, 0.25)',
       },
+      animation: {
+        bounce: 'bounce 1s ease-in-out infinite',
+      }
     },
   },
   plugins: [],

@@ -1,9 +1,10 @@
 'use client'
-  import React, { useRef, useState } from 'react';
+  import React, { useRef, useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import Header from './Header';
 import Image from 'next/image';
-import Hero from '@/assets/Hero.png';
+import heroboy from '@/assets/heroboy.png';
+import star from '@/assets/star.gif';
 import Link from 'next/link';
 import book from "@/assets/book.png"
 import cloud from "@/assets/cloud.png"
@@ -42,13 +43,15 @@ import play from "@/assets/play.png"
 import apple from "@/assets/apple.png"
 import Vector6 from "@/assets/Vector6.png"
 import path from "@/assets/Path.png"
-import phone1 from '@/assets/phone1.png';
+import step from '@/assets/step.gif';
 import girl1 from '@/assets/girl1.png';
-import phone3 from '@/assets/phone3.png';
-import phone4 from '@/assets/phone4.png';
-import phone2 from '@/assets/phone2.png';
+import Step2 from '@/assets/Step2.gif';
+import Step3 from '@/assets/Step3.gif';
+import Step4 from '@/assets/Step4.gif';
 import boy1 from '@/assets/boy1.png';
 import girl from '@/assets/girl.png';
+import elements from '@/assets/elements.gif';
+import { useInView } from 'react-intersection-observer'
 import { url } from 'inspector';
 const Landing = () => {
 
@@ -73,6 +76,11 @@ const Landing = () => {
     }
   };
 
+
+  const [firstRef, firstInView] = useInView({ threshold: 0 });
+  const [secRef, secInView] = useInView({ threshold: 0 });
+  const [threeRef, threeInView] = useInView({ threshold: 0 });
+  const [fourRef, fourInView] = useInView({ threshold: 0 });
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -86,11 +94,19 @@ const Landing = () => {
       setIsPlaying(!isPlaying);
     }
   };
+  const imgRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (imgRef.current && imgRef.current.firstChild instanceof Element) {
+      imgRef.current.firstChild.classList.add('animate-custom-bounce')
+    }
+  }, [])
 
   return (
     <div>
       <div className='relative'>
-      <Image className='w-full' src={Hero} alt="hero"/>
+      <Image className='w-full' src={elements} alt="star"/>
+      <div className='flex justify-center items-center'>
       <div className='absolute 3xl:top-[361px] 3xl:left-[130px] 2xl:top-[261px] 2xl:left-[130px] xl:top-[211px] xl:left-[30px]'>
           <p className="pl-[48px] text-white font-extrabold xl:text-[65px] 2xl:text-[85px] 3xl:text-[85px] leading-[90px]">Endless <br /> Stories</p>
           <p className="pl-[48px] text-white font-medium text-[28px] leading-[30px] pt-3 w-[439px] h-[90px]">Transform your childs imagination into storybooks . </p>
@@ -123,6 +139,10 @@ const Landing = () => {
         </div>
       </div>
         </div>
+        <div className='animate-custom-bounce absolute 3xl:top-[227px] 3xl:left-[788px] 3xl:w-[854px] 3xl:h-[752px] 2xl:top-[139px] 2xl:left-[550px] 2xl:w-[854px] 2xl:h-[652px] xl:top-[139px] xl:left-[550px] xl:w-[654px] xl:h-[552px]'>
+        <Image className='animate-custom-bounce' src={heroboy} alt="heroboy"/>
+        </div>
+      </div>
         {/***********************************  Header start ********************************** */}
         <div className="flex absolute top-0">
                   <p className="text-white text-center text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl font-normal leading-normal 3xl:mt-[53px] 3xl:mr-[513px] 3xl:ml-[126px]  2xl:mt-[53px] 2xl:mr-[413px] 2xl:ml-[126px] xl:mt-[43px] xl:mr-[370px] xl:ml-[66px] lg:mt-[33px] lg:mr-[270px] lg:ml-[66px] md:mt-[23px] md:mr-[200px] md:ml-[46px]" >Endless Stories</p>
@@ -149,21 +169,69 @@ const Landing = () => {
             <Image className="absolute 3xl:top-[957px] 3xl:left-[1058px] 2xl:top-[917px] 2xl:left-[843.01px] xl:top-[827px] xl:left-[743px] xl:w-[133px] 2xl:w-[153px]" src={book} alt=""/>
             <Image className="absolute 3xl:top-[643px] 3xl:left-[173.01px] 2xl:top-[693px] 2xl:left-[103.01px] xl:top-[593px] xl:left-[93.01px] xl:w-[243px] 2xl:w-[253px]" src={butterfly} alt=""/>
         </div>  
+
+        <div className='pt-24 bg-opacity-100 pb-20'>
+          <div className='  flex justify-center overflow-hidden select-none items-center p-0 m-0 list-none text-center '>
+            <div className=' flex'>
+              <div className="inline-flex items-center justify-center w-full">
+                <div className=' outline-none'>
+                  <div className={`${firstInView ? 'bg-[#6470D7] border-8 border-[rgba(100, 112, 215, 0.70)] p-3' : 'bg-[#DBDBDB]'} p-5   rounded-full  w-16 h-16 items-center font-bold text-1xl object-cover text-white`}>1</div>
+                </div>
+              </div>
+              <div className="inline-flex items-center justify-center w-full">
+                <hr className={`${secInView ? 'bg-[#6470D7] border-4 border-[#6470D7]':'bg-[#6470D7]'} sm:w-44 h-1 my-8 bg-[#DBDBDB] border-4 border-[#DBDBDB] rounded-full`} />
+                <div className='outline-none'>
+                  <div className={`${secInView ? 'bg-[#6470D7] border-8 border-[rgba(100, 112, 215, 0.70)] p-3' : 'bg-[#DBDBDB]'} p-5   rounded-full w-16 h-16 items-center font-bold text-1xl object-cover text-white`} >
+                    <p>2</p>
+                  </div>
+                </div>
+              </div>
+              <div className="inline-flex items-center justify-center w-full">
+                <hr className={`${threeInView ? 'bg-[#6470D7] border-4 border-[#6470D7]':'bg-[#6470D7]'} sm:w-44 h-1 my-8 bg-[#DBDBDB] border-4 border-[#DBDBDB] rounded-full`} />
+                <div className='outline-none'>
+                  <div className={`${threeInView ? 'bg-[#6470D7] border-8 border-[rgba(100, 112, 215, 0.70)] p-3' : 'bg-[#DBDBDB]'} p-5   rounded-full w-16 h-16 items-center font-bold text-1xl object-cover text-white`} >3</div>
+                </div>
+              </div>
+              <div className="inline-flex items-center justify-center w-full">
+                <hr className={`${fourInView ? 'bg-[#6470D7] border-4 border-[#6470D7]':'bg-[#6470D7]'} sm:w-44 h-1 my-8 bg-[#DBDBDB] border-4 border-[#DBDBDB] rounded-full`} />
+                <div className=' outline-none'>
+                  <div className={`${fourInView ? 'bg-[#6470D7] border-8 border-[rgba(100, 112, 215, 0.70)] p-3' : 'bg-[#DBDBDB]'} p-5   rounded-full w-16 h-16 items-center font-bold text-1xl object-cover text-white`} >4</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
         <div>
-        <Carousel responsive={responsive} className='h-[1080px] top-[-190px]'>
+        <Carousel responsive={responsive} 
+          swipeable={false}
+          draggable={false}
+          showDots={false}
+          ssr={true} // means to render carousel on server-side.
+          infinite={true}
+          autoPlay={true}
+          autoPlaySpeed={2000}
+          keyBoardControl={true}
+          customTransition="all .5"
+          transitionDuration={500}
+          containerClass="carousel-container"
+          removeArrowOnDeviceType={["tablet", "mobile"]}
+          dotListClass="custom-dot-list-style"
+          itemClass="carousel-item-padding-40-px"
+        className='h-[1080px] top-[-390px]'>
           <div>
           <div className="flex justify-center items-center pt-20">
             <div className="pl-52 pt-52">
-              <Image className='3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[300px] xl:h-[517px] mb-14' src={phone1} alt="" />
+              <Image className='rounded-3xl border-8 border-black 3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[300px] xl:h-[517px] mb-14' src={step} alt="" />
             </div>
             <div className="mt-[580px]">
               <Image className="xl:w-[220px] xl:h-[137px]" src={girl1} alt=""/>
             </div>
-            <div className="pl-[31px]">
+            <div className="pl-[21px]">
               <div className="3xl:w-[645px] 3xl:h-[223px] 2xl:w-[545px] 2xl:h-[193px] xl:w-[445px] xl:h-[123px]  flex-shrink-0 rounded-lg bg-[#FCFCFC]">
                 <div className="3xl:pt-[65px] 2xl:pt-[65px] xl:pt-[25px] flex items-center justify-center">
                   <div className="w-[62px] h-[62px] rounded-full bg-[#D68294]">
-                    <p className="text-white 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold flex items-center justify-center pt-3.5">1</p>
+                    <p ref={firstRef} className="text-white 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold flex items-center justify-center pt-3.5">1</p>
                   </div>
                   <div className="pl-6">
                     <p className="text-[#2A2E36] 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold">Start your adventure</p>
@@ -174,13 +242,15 @@ const Landing = () => {
             </div>
           </div>
           </div>
+
+
+
           <div>
           <div className="flex justify-center items-center pt-20">
             <div className="pl-52 pt-52">
-              <Image className='3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[300px] xl:h-[517px] mb-14' src={phone2} alt="" />
-            </div>
-            <div className="mt-[500px]">
-              <Image className="xl:w-[155px] xl:h-[131px]" src={boy1} alt=""/>
+            <Image className='rounded-3xl border-8 border-black 3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[300px] xl:h-[517px] mb-14' src={Step2} alt="" />            </div>
+            <div className="mt-[580px]">
+              <Image className="" src={boy1} alt=""/>
             </div>
             <div className="pl-[31px]">
               <div className="3xl:w-[645px] 3xl:h-[223px] 2xl:w-[545px] 2xl:h-[193px] xl:w-[445px] xl:h-[123px]  flex-shrink-0 rounded-lg bg-[#FCFCFC]">
@@ -189,8 +259,8 @@ const Landing = () => {
                     <p className="text-white 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold flex items-center justify-center pt-3.5">2</p>
                   </div>
                   <div className="pl-6">
-                    <p className="text-[#2A2E36] 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold">Start your adventure</p>
-                    <p className="text-[#2A2E36] 3xl:text-2xl 2xl:text-xl xl:text-lg font-normal">Speak out your story idea or plot</p>
+                    <p ref={secRef} className="text-[#2A2E36] 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold">Pick your picture</p>
+                    <p className="text-[#2A2E36] 3xl:text-2xl 2xl:text-xl xl:text-lg font-normal">Sit back and listen as the story <br /> unfolds</p>
                   </div>
                 </div>
               </div>
@@ -202,8 +272,7 @@ const Landing = () => {
           <div>
           <div className="flex justify-center items-center pt-20">
             <div className="pl-52 pt-52">
-              <Image className='3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[300px] xl:h-[517px] mb-14' src={phone2} alt="" />
-            </div>
+            <Image className='rounded-3xl border-8 border-black 3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[300px] xl:h-[517px] mb-14' src={Step3} alt="" />            </div>
             <div className="mt-[580px]">
               <Image className="" src={girl} alt=""/>
             </div>
@@ -211,11 +280,11 @@ const Landing = () => {
               <div className="3xl:w-[645px] 3xl:h-[223px] 2xl:w-[545px] 2xl:h-[193px] xl:w-[445px] xl:h-[123px]  flex-shrink-0 rounded-lg bg-[#FCFCFC]">
                 <div className="3xl:pt-[65px] 2xl:pt-[65px] xl:pt-[25px] flex items-center justify-center">
                   <div className="w-[62px] h-[62px] rounded-full bg-[#D68294]">
-                    <p className="text-white 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold flex items-center justify-center pt-3.5">3</p>
+                    <p ref={threeRef} className="text-white 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold flex items-center justify-center pt-3.5">3</p>
                   </div>
                   <div className="pl-6">
-                    <p className="text-[#2A2E36] 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold">Start your adventure</p>
-                    <p className="text-[#2A2E36] 3xl:text-2xl 2xl:text-xl xl:text-lg font-normal">Speak out your story idea or plot</p>
+                    <p className="text-[#2A2E36] 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold">​Enjoy the tale</p>
+                    <p className="text-[#2A2E36] 3xl:text-2xl 2xl:text-xl xl:text-lg font-normal">Sit back and listen as the story <br /> unfolds</p>
                   </div>
                 </div>
               </div>
@@ -225,10 +294,9 @@ const Landing = () => {
 
 
           <div>
-          <div className="flex justify-center items-center pt-20">
+          <div  className="flex justify-center items-center pt-20">
             <div className="pl-52 pt-52">
-              <Image className='3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[300px] xl:h-[517px] mb-14' src={phone4} alt="" />
-            </div>
+            <Image className='rounded-3xl border-8 border-black 3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[300px] xl:h-[517px] mb-14' src={Step4} alt="" />            </div>
             <div className="mt-[580px]">
               <Image className="xl:w-[96px] xl-[96px]" src={boy} alt=""/>
             </div>
@@ -236,11 +304,11 @@ const Landing = () => {
               <div className="3xl:w-[645px] 3xl:h-[223px] 2xl:w-[545px] 2xl:h-[193px] xl:w-[445px] xl:h-[123px]  flex-shrink-0 rounded-lg bg-[#FCFCFC]">
                 <div className="3xl:pt-[65px] 2xl:pt-[65px] xl:pt-[25px] flex items-center justify-center">
                   <div className="w-[62px] h-[62px] rounded-full bg-[#D68294]">
-                    <p className="text-white 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold flex items-center justify-center pt-3.5">4</p>
+                    <p ref={fourRef} className="text-white 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold flex items-center justify-center pt-3.5">4</p>
                   </div>
                   <div className="pl-6">
-                    <p className="text-[#2A2E36] 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold">Start your adventure</p>
-                    <p className="text-[#2A2E36] 3xl:text-2xl 2xl:text-xl xl:text-lg font-normal">Speak out your story idea or plot</p>
+                    <p className="text-[#2A2E36] 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold">Keep the magic alive</p>
+                    <p className="text-[#2A2E36] 3xl:text-2xl 2xl:text-xl xl:text-lg font-normal">Add another page to continue <br />your story</p>
                   </div>
                 </div>
               </div>
@@ -318,10 +386,10 @@ const Landing = () => {
                 width="320"
                 height="240"
                 ref={videoRef}
-                onClick={handlePlayPause} className='3xl:w-[560px] 3xl:h-[410px] 2xl:w-[435px] 2xl:h-[400px] xl:w-[329px] xl:h-[310px] 3xl:top-[-575px] 3xl:left-[10px]  2xl:top-[-556px] 2xl:left-[58px] xl:top-[-426px] xl:left-[47px] absolute rounded-[48px]' >
-                <source src="/file.mp4" type="video/mp4" />
+                onClick={handlePlayPause} className='3xl:w-[560px] 3xl:h-[410px] 2xl:w-[435px] 2xl:h-[400px] xl:w-[329px] xl:h-[300px] 3xl:top-[-575px] 3xl:left-[10px]  2xl:top-[-556px] 2xl:left-[58px] xl:top-[-414px] xl:left-[47px] absolute rounded-3xl' >
+                <source src="/Nova.mov" type="video/mp4" />
               </video>
-              <button className="absolute top-[-370px] left-[280px] xl:top-[-270px] xl:left-[230px] transform -translate-x-1/2 -translate-y-1/2" onClick={handlePlayPause}>
+              <button className="absolute 3xl:top-[-390px] 3xl:left-[280px] 2xl:top-[-340px] 2xl:left-[280px]  xl:top-[-270px] xl:left-[230px] transform -translate-x-1/2 -translate-y-1/2" onClick={handlePlayPause}>
                 {isPlaying ? <BsFillPauseCircleFill className='w-24 h-24 fill-white' /> : <BsPlayCircleFill className='w-24 h-24 fill-white'/>}
               </button>
             </div>
