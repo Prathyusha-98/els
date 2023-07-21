@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
 import Header from './Header';
 import Image from 'next/image';
-import Herosec from '@/assets/Herosec.gif';
+import gif1 from '@/assets/gif1.gif';
 import Link from 'next/link';
 import book from "@/assets/book.png"
 import cloud from "@/assets/cloud.png"
@@ -89,7 +89,7 @@ const Landing = () => {
   return (
     <div>
       <div className='relative'>
-      <Image className='w-100% ' src={Herosec} alt=""/>
+      <Image className='w-100% ' src={gif1} alt=""/>
       <div className='absolute 3xl:top-[361px] 3xl:left-[130px] 2xl:top-[261px] 2xl:left-[130px] xl:top-[211px] xl:left-[30px]'>
           <p className="pl-[48px] text-white font-extrabold xl:text-[65px] 2xl:text-[85px] 3xl:text-[85px] leading-[90px]">Endless <br /> Stories</p>
           <p className="pl-[48px] text-white font-medium text-[28px] leading-[30px] pt-3 w-[439px] h-[90px]">Transform your childs imagination into storybooks . </p>
