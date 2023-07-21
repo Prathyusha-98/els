@@ -37,3 +37,18 @@ body {
 .animate-custom-bounce {
   animation: custom-bounce 2s infinite;
 }
+
+@keyframes twinkling {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  border-radius: 50%;
+  animation: twinkling 3s infinite;
+}

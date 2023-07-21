@@ -23,7 +23,7 @@ import Vector4 from "@/assets/Vector4.png"
 import tv from "@/assets/tv.png"
 import { BsFillPauseCircleFill, BsFillPlayCircleFill} from 'react-icons/bs';
 import {BsPlayCircleFill} from 'react-icons/bs'
-import VideoPage from './Videopage';
+import phone from '@/assets/phone.gif';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import cloud2 from "@/assets/cloud2.png"
@@ -53,6 +53,7 @@ import girl from '@/assets/girl.png';
 import elements from '@/assets/elements.gif';
 import { useInView } from 'react-intersection-observer'
 import { url } from 'inspector';
+import Stars from './Stars';
 const Landing = () => {
 
 
@@ -105,6 +106,7 @@ const Landing = () => {
   return (
     <div>
       <div className='relative bg-uni w-full xl:h-[675px] 3xl:h-[975] 2xl:h[875px]'>
+      <Stars />
       {/* image of animation*/}
       <div className='flex justify-center items-center'>
       <div className='absolute 3xl:top-[361px] 3xl:left-[130px] 2xl:top-[261px] 2xl:left-[130px] xl:top-[211px] xl:left-[30px]'>
@@ -156,8 +158,6 @@ const Landing = () => {
               </ul>
         </div>
         {/********************************** Header end ******************************/}
-
-
       </div>
       {/**************************** carousel start **************************************/}
 
@@ -272,7 +272,7 @@ const Landing = () => {
           <div>
           <div className="flex justify-center items-center pt-20">
             <div className="pl-52 pt-52">
-            <Image className='rounded-3xl border-8 border-black 3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[300px] xl:h-[517px] mb-14' src={Step3} alt="" />            </div>
+            <Image className='rounded-3xl border-8 border-black 3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[300px] xl:h-[517px] mb-14' src={phone} alt="" />            </div>
             <div className="mt-[580px]">
               <Image className="" src={girl} alt=""/>
             </div>
