@@ -104,7 +104,7 @@ const Landing = () => {
   }, [])
 
   return (
-    <div>
+    <div className='bg-uni'>
       <div className='relative bg-uni w-full xl:h-[675px] 3xl:h-[975px] 2xl:h-[875px]'>
       <Stars />
       {/* image of animation*/}
@@ -146,7 +146,7 @@ const Landing = () => {
         </div>
       </div>
         {/***********************************  Header start ********************************** */}
-        <div className="flex absolute top-0">
+        <div className="flex absolute top-0 ">
                   <p className="text-white text-center text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl font-normal leading-normal 3xl:mt-[53px] 3xl:mr-[513px] 3xl:ml-[126px]  2xl:mt-[53px] 2xl:mr-[413px] 2xl:ml-[126px] xl:mt-[43px] xl:mr-[370px] xl:ml-[66px] lg:mt-[33px] lg:mr-[270px] lg:ml-[66px] md:mt-[23px] md:mr-[200px] md:ml-[46px]" >Endless Stories</p>
               
               <ul className="flex 3xl:mt-[63px] 3xl:mr-[15px] 2xl:mt-[63px] 2xl:mr-[100px] xl:mt-[43px] xl:mr-[1px] lg:mt-[33px] lg:mr-[15px]">
@@ -161,7 +161,7 @@ const Landing = () => {
       </div>
       {/**************************** carousel start **************************************/}
 
-      <div className='3xl:h-[1110px] xl:h-[999px] 2xl:h-[1110px] bg-[#F8F7FF] relative'>
+      <div className='3xl:h-[1110px] xl:h-[999px] 2xl:h-[1110px] bg-[#F8F7FF] pt-8 relative'>
       <div className="relative">
             <Image src={cloud} className="mt-[46px] xl:mt-[46px] xl:h-[190px] 2xl:h-[210px] w-100%" alt=""/>
             <div className="flex items-center justify-center"> <p className="absolute items-center text-black text-7xl font-bold leading-normal;">How it works</p></div>
