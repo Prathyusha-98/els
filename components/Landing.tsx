@@ -5,14 +5,13 @@ import Header from './Header';
 import Image from 'next/image';
 import Herosec from '@/assets/Herosec.gif';
 import Link from 'next/link';
-import { items } from "../public/Items.json";
 import book from "@/assets/book.png"
 import cloud from "@/assets/cloud.png"
 import butterfly from "@/assets/butterfly.png"
 import wave from "@/assets/wave.png"
 import vector1 from "@/assets/Vector1.png" 
-import vector2 from "@/assets/vector2.png" 
-import vector3 from "@/assets/vector3.png" 
+import vector2 from "@/assets/Vector2.png" 
+import vector3 from "@/assets/Vector3.png" 
 import sun from "@/assets/sun.png"
 import animal from "@/assets/animal.png"
 import mail from "@/assets/mail.png"
@@ -42,7 +41,7 @@ import fox from "@/assets/fox.png"
 import play from "@/assets/play.png"
 import apple from "@/assets/apple.png"
 import Vector6 from "@/assets/Vector6.png"
-import path from "@/assets/path.png"
+import path from "@/assets/Path.png"
 import phone1 from '@/assets/phone1.png';
 import girl1 from '@/assets/girl1.png';
 import phone3 from '@/assets/phone3.png';
