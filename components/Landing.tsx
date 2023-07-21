@@ -51,11 +51,6 @@ import boy1 from '@/assets/boy1.png';
 import girl from '@/assets/girl.png';
 const Landing = () => {
 
-  const { bootstrap } = items;
-  const [index, setIndex] = useState(0);
-  const handleSelect = (selectedIndex: number, e: any) => {
-    setIndex(selectedIndex);
-  };
 
   const responsive = {
     superLargeDesktop: {
