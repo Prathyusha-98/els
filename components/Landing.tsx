@@ -104,8 +104,8 @@ const Landing = () => {
 
   return (
     <div>
-      <div className='relative'>
-      <Image className='w-full' src={elements} alt="star"/>
+      <div className='relative bg-uni w-full xl:h-[675px] 3xl:h-[975] 2xl:h[875px]'>
+      {/*<Image className='w-full' src={} alt="star"/>*/}
       <div className='flex justify-center items-center'>
       <div className='absolute 3xl:top-[361px] 3xl:left-[130px] 2xl:top-[261px] 2xl:left-[130px] xl:top-[211px] xl:left-[30px]'>
           <p className="pl-[48px] text-white font-extrabold xl:text-[65px] 2xl:text-[85px] 3xl:text-[85px] leading-[90px]">Endless <br /> Stories</p>
@@ -175,25 +175,25 @@ const Landing = () => {
             <div className=' flex'>
               <div className="inline-flex items-center justify-center w-full">
                 <div className=' outline-none'>
-                  <div className={`${firstInView ? 'bg-[#6470D7] border-8 border-[rgba(100, 112, 215, 0.70)] p-3' : 'bg-[#DBDBDB]'} p-5   rounded-full  w-16 h-16 items-center font-bold text-1xl object-cover text-white`}>1</div>
+                  <div className={`${firstInView ? 'bg-[#6470D7] border-8 border-[rgba(100, 112, 215, 0.70)] p-3' : 'bg-[#DBDBDB] '} p-5   rounded-full  w-16 h-16 items-center font-bold text-1xl object-cover text-white`}>1</div>
                 </div>
               </div>
               <div className="inline-flex items-center justify-center w-full">
                 <hr className={`${secInView ? 'bg-[#6470D7] border-4 border-[#6470D7]':'bg-[#6470D7]'} sm:w-44 h-1 my-8 bg-[#DBDBDB] border-4 border-[#DBDBDB] rounded-full`} />
                 <div className='outline-none'>
-                  <div className={`${secInView ? 'bg-[#6470D7] border-8 border-[rgba(100, 112, 215, 0.70)] p-3' : 'bg-[#DBDBDB]'} p-5   rounded-full w-16 h-16 items-center font-bold text-1xl object-cover text-white`} >
+                  <div className={`${secInView ? 'bg-[#6470D7] border-8 border-[rgba(100, 112, 215, 0.70)] p-3' : 'bg-[#DBDBDB]  '} p-5   rounded-full w-16 h-16 items-center font-bold text-1xl object-cover text-white`} >
                     <p>2</p>
                   </div>
                 </div>
               </div>
               <div className="inline-flex items-center justify-center w-full">
-                <hr className={`${threeInView ? 'bg-[#6470D7] border-4 border-[#6470D7]':'bg-[#6470D7]'} sm:w-44 h-1 my-8 bg-[#DBDBDB] border-4 border-[#DBDBDB] rounded-full`} />
+                <hr className={`${threeInView ? 'bg-[#6470D7] border-4 border-[#6470D7]':'bg-[#6470D7] '} sm:w-44 h-1 my-8 bg-[#DBDBDB] border-4 border-[#DBDBDB] rounded-full`} />
                 <div className='outline-none'>
                   <div className={`${threeInView ? 'bg-[#6470D7] border-8 border-[rgba(100, 112, 215, 0.70)] p-3' : 'bg-[#DBDBDB]'} p-5   rounded-full w-16 h-16 items-center font-bold text-1xl object-cover text-white`} >3</div>
                 </div>
               </div>
               <div className="inline-flex items-center justify-center w-full">
-                <hr className={`${fourInView ? 'bg-[#6470D7] border-4 border-[#6470D7]':'bg-[#6470D7]'} sm:w-44 h-1 my-8 bg-[#DBDBDB] border-4 border-[#DBDBDB] rounded-full`} />
+                <hr className={`${fourInView ? 'bg-[#6470D7] border-4 border-[#6470D7]':'bg-[#6470D7] '} sm:w-44 h-1 my-8 bg-[#DBDBDB] border-4 border-[#DBDBDB] rounded-full`} />
                 <div className=' outline-none'>
                   <div className={`${fourInView ? 'bg-[#6470D7] border-8 border-[rgba(100, 112, 215, 0.70)] p-3' : 'bg-[#DBDBDB]'} p-5   rounded-full w-16 h-16 items-center font-bold text-1xl object-cover text-white`} >4</div>
                 </div>
