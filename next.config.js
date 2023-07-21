@@ -10,5 +10,9 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+module.exports = {
+  images: {
+    domains: ['endlessstories.s3.ap-south-1.amazonaws.com'], // Add the domain(s) from which the images will be served.
+  },
+};
 

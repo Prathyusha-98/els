@@ -49,6 +49,7 @@ import phone4 from '@/assets/phone4.png';
 import phone2 from '@/assets/phone2.png';
 import boy1 from '@/assets/boy1.png';
 import girl from '@/assets/girl.png';
+import { url } from 'inspector';
 const Landing = () => {
 
 
@@ -89,7 +90,7 @@ const Landing = () => {
   return (
     <div>
       <div className='relative'>
-      <Image className='w-100% ' src={gif1} alt=""/>
+      <Image width={1280} height={300} src='https://endlessstories.s3.ap-south-1.amazonaws.com/gif1.gif' alt=""/>
       <div className='absolute 3xl:top-[361px] 3xl:left-[130px] 2xl:top-[261px] 2xl:left-[130px] xl:top-[211px] xl:left-[30px]'>
           <p className="pl-[48px] text-white font-extrabold xl:text-[65px] 2xl:text-[85px] 3xl:text-[85px] leading-[90px]">Endless <br /> Stories</p>
           <p className="pl-[48px] text-white font-medium text-[28px] leading-[30px] pt-3 w-[439px] h-[90px]">Transform your childs imagination into storybooks . </p>
@@ -127,10 +128,10 @@ const Landing = () => {
                   <p className="text-white text-center text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl font-normal leading-normal 3xl:mt-[53px] 3xl:mr-[513px] 3xl:ml-[126px]  2xl:mt-[53px] 2xl:mr-[413px] 2xl:ml-[126px] xl:mt-[43px] xl:mr-[370px] xl:ml-[66px] lg:mt-[33px] lg:mr-[270px] lg:ml-[66px] md:mt-[23px] md:mr-[200px] md:ml-[46px]" >Endless Stories</p>
               
               <ul className="flex 3xl:mt-[63px] 3xl:mr-[15px] 2xl:mt-[63px] 2xl:mr-[100px] xl:mt-[43px] xl:mr-[1px] lg:mt-[33px] lg:mr-[15px]">
-                  <li><Link  className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-white leading-normal' href="">Home</Link></li>
+                  <li><Link  className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-white leading-normal' href="/">Home</Link></li>
                   <li ><Link className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-white leading-normal' href="">How it works</Link></li>
                   <li ><Link className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-white leading-normal' href="">See it in action</Link></li>
-                  <li ><Link className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-white leading-normal'  href="">Support</Link></li>
+                  <li ><Link className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-white leading-normal'  href="/support">Support</Link></li>
                   <li ><Link className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-white leading-normal'  href="">Contact</Link></li>
               </ul>
         </div>
