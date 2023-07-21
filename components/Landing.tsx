@@ -105,7 +105,7 @@ const Landing = () => {
   return (
     <div>
       <div className='relative bg-uni w-full xl:h-[675px] 3xl:h-[975] 2xl:h[875px]'>
-      {/*<Image className='w-full' src={} alt="star"/>*/}
+      {/* image of animation*/}
       <div className='flex justify-center items-center'>
       <div className='absolute 3xl:top-[361px] 3xl:left-[130px] 2xl:top-[261px] 2xl:left-[130px] xl:top-[211px] xl:left-[30px]'>
           <p className="pl-[48px] text-white font-extrabold xl:text-[65px] 2xl:text-[85px] 3xl:text-[85px] leading-[90px]">Endless <br /> Stories</p>
@@ -387,7 +387,7 @@ const Landing = () => {
                 height="240"
                 ref={videoRef}
                 onClick={handlePlayPause} className='3xl:w-[560px] 3xl:h-[410px] 2xl:w-[435px] 2xl:h-[400px] xl:w-[329px] xl:h-[300px] 3xl:top-[-575px] 3xl:left-[10px]  2xl:top-[-556px] 2xl:left-[58px] xl:top-[-414px] xl:left-[47px] absolute rounded-3xl' >
-                <source src="/Nova.mov" type="video/mp4" />
+                <source src="/kin.mp4" type="video/mp4" />
               </video>
               <button className="absolute 3xl:top-[-390px] 3xl:left-[280px] 2xl:top-[-340px] 2xl:left-[280px]  xl:top-[-270px] xl:left-[230px] transform -translate-x-1/2 -translate-y-1/2" onClick={handlePlayPause}>
                 {isPlaying ? <BsFillPauseCircleFill className='w-24 h-24 fill-white' /> : <BsPlayCircleFill className='w-24 h-24 fill-white'/>}
