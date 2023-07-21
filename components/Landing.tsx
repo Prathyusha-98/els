@@ -43,7 +43,7 @@ import play from "@/assets/play.png"
 import apple from "@/assets/apple.png"
 import Vector6 from "@/assets/Vector6.png"
 import path from "@/assets/Path.png"
-import step from '@/assets/step.gif';
+import Step from '@/assets/Step.gif';
 import girl1 from '@/assets/girl1.png';
 import Step2 from '@/assets/Step2.gif';
 import Step3 from '@/assets/Step3.gif';
@@ -222,7 +222,7 @@ const Landing = () => {
           <div>
           <div className="flex justify-center items-center pt-20">
             <div className="pl-52 pt-52">
-              <Image className='rounded-3xl border-8 border-black 3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[300px] xl:h-[517px] mb-14' src={step} alt="" />
+              <Image className='rounded-3xl border-8 border-black 3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[300px] xl:h-[517px] mb-14' src={Step} alt="" />
             </div>
             <div className="mt-[580px]">
               <Image className="xl:w-[220px] xl:h-[137px]" src={girl1} alt=""/>
