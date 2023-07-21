@@ -105,7 +105,7 @@ const Landing = () => {
 
   return (
     <div>
-      <div className='relative bg-uni w-full xl:h-[675px] 3xl:h-[975] 2xl:h[875px]'>
+      <div className='relative bg-uni w-full xl:h-[675px] 3xl:h-[975px] 2xl:h-[875px]'>
       <Stars />
       {/* image of animation*/}
       <div className='flex justify-center items-center'>
