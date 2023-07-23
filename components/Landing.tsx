@@ -54,34 +54,10 @@ import elements from '@/assets/elements.gif';
 import { useInView } from 'react-intersection-observer'
 import { url } from 'inspector';
 import Stars from './Stars';
+import Caruselpage from './Carouselpage';
 const Landing = () => {
 
 
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 1
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 1
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 1
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1
-    }
-  };
-
-
-  const [firstRef, firstInView] = useInView({ threshold: 0 });
-  const [secRef, secInView] = useInView({ threshold: 0 });
-  const [threeRef, threeInView] = useInView({ threshold: 0 });
-  const [fourRef, fourInView] = useInView({ threshold: 0 });
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -102,6 +78,58 @@ const Landing = () => {
       imgRef.current.firstChild.classList.add('animate-custom-bounce')
     }
   }, [])
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 1
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 1
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 1
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1
+    }
+  };
+
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    message: '',
+  });
+
+  const handleChange = (e: { target: { name: any; value: any; }; }) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('/api/feedback', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        // Email sent successfully
+        alert('Feedback submitted successfully!');
+      } else {
+        alert('Failed to submit feedback. Please try again later.');
+      }
+    } catch (error) {
+      console.error('Error sending feedback:', error);
+      alert('Failed to submit feedback. Please try again later.');
+    }
+  };
 
   return (
     <div className='bg-uni'>
@@ -161,163 +189,8 @@ const Landing = () => {
       </div>
       {/**************************** carousel start **************************************/}
 
-      <div className='3xl:h-[1110px] xl:h-[999px] 2xl:h-[1110px] bg-[#F8F7FF] pt-8 relative'>
-      <div className="relative">
-            <Image src={cloud} className="mt-[46px] xl:mt-[46px] xl:h-[190px] 2xl:h-[210px] w-100%" alt=""/>
-            <div className="flex items-center justify-center"> <p className="absolute items-center text-black text-7xl font-bold leading-normal;">How it works</p></div>
-            <Image src={wave} className="absolute 3xl:top-[897px] 3xl:left-0 2xl:top-[897px] 2xl:left-0 xl:top-[797px] xl:left-0 xl:h-[204px] 2xl:h-[214px]" alt="" />
-            <Image className="absolute 3xl:top-[957px] 3xl:left-[1058px] 2xl:top-[917px] 2xl:left-[843.01px] xl:top-[827px] xl:left-[743px] xl:w-[133px] 2xl:w-[153px]" src={book} alt=""/>
-            <Image className="absolute 3xl:top-[643px] 3xl:left-[173.01px] 2xl:top-[693px] 2xl:left-[103.01px] xl:top-[593px] xl:left-[93.01px] xl:w-[243px] 2xl:w-[253px]" src={butterfly} alt=""/>
-        </div>  
 
-        <div className='pt-24 bg-opacity-100 pb-20'>
-          <div className='  flex justify-center overflow-hidden select-none items-center p-0 m-0 list-none text-center '>
-            <div className=' flex'>
-              <div className="inline-flex items-center justify-center w-full">
-                <div className=' outline-none'>
-                  <div className={`${firstInView ? 'bg-[#6470D7] border-8 border-[rgba(100, 112, 215, 0.70)] p-3' : 'bg-[#DBDBDB] '} p-5   rounded-full  w-16 h-16 items-center font-bold text-1xl object-cover text-white`}>1</div>
-                </div>
-              </div>
-              <div className="inline-flex items-center justify-center w-full">
-                <hr className={`${secInView ? 'bg-[#6470D7] border-4 border-[#6470D7]':'bg-[#6470D7]'} sm:w-44 h-1 my-8 bg-[#DBDBDB] border-4 border-[#DBDBDB] rounded-full`} />
-                <div className='outline-none'>
-                  <div className={`${secInView ? 'bg-[#6470D7] border-8 border-[rgba(100, 112, 215, 0.70)] p-3' : 'bg-[#DBDBDB]  '} p-5   rounded-full w-16 h-16 items-center font-bold text-1xl object-cover text-white`} >
-                    <p>2</p>
-                  </div>
-                </div>
-              </div>
-              <div className="inline-flex items-center justify-center w-full">
-                <hr className={`${threeInView ? 'bg-[#6470D7] border-4 border-[#6470D7]':'bg-[#6470D7] '} sm:w-44 h-1 my-8 bg-[#DBDBDB] border-4 border-[#DBDBDB] rounded-full`} />
-                <div className='outline-none'>
-                  <div className={`${threeInView ? 'bg-[#6470D7] border-8 border-[rgba(100, 112, 215, 0.70)] p-3' : 'bg-[#DBDBDB]'} p-5   rounded-full w-16 h-16 items-center font-bold text-1xl object-cover text-white`} >3</div>
-                </div>
-              </div>
-              <div className="inline-flex items-center justify-center w-full">
-                <hr className={`${fourInView ? 'bg-[#6470D7] border-4 border-[#6470D7]':'bg-[#6470D7] '} sm:w-44 h-1 my-8 bg-[#DBDBDB] border-4 border-[#DBDBDB] rounded-full`} />
-                <div className=' outline-none'>
-                  <div className={`${fourInView ? 'bg-[#6470D7] border-8 border-[rgba(100, 112, 215, 0.70)] p-3' : 'bg-[#DBDBDB]'} p-5   rounded-full w-16 h-16 items-center font-bold text-1xl object-cover text-white`} >4</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <div>
-        <Carousel responsive={responsive} 
-          swipeable={false}
-          draggable={false}
-          showDots={false}
-          ssr={true} // means to render carousel on server-side.
-          infinite={true}
-          autoPlay={true}
-          autoPlaySpeed={2000}
-          keyBoardControl={true}
-          customTransition="all .5"
-          transitionDuration={500}
-          containerClass="carousel-container"
-          removeArrowOnDeviceType={["tablet", "mobile"]}
-          dotListClass="custom-dot-list-style"
-          itemClass="carousel-item-padding-40-px"
-        className='h-[1080px] top-[-390px]'>
-          <div>
-          <div className="flex justify-center items-center pt-20">
-            <div className="pl-52 pt-52">
-              <Image className='rounded-3xl border-8 border-black 3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[300px] xl:h-[517px] mb-14' src={Step} alt="" />
-            </div>
-            <div className="mt-[580px]">
-              <Image className="xl:w-[220px] xl:h-[137px]" src={girl1} alt=""/>
-            </div>
-            <div className="pl-[21px]">
-              <div className="3xl:w-[645px] 3xl:h-[223px] 2xl:w-[545px] 2xl:h-[193px] xl:w-[445px] xl:h-[123px]  flex-shrink-0 rounded-lg bg-[#FCFCFC]">
-                <div className="3xl:pt-[65px] 2xl:pt-[65px] xl:pt-[25px] flex items-center justify-center">
-                  <div className="w-[62px] h-[62px] rounded-full bg-[#D68294]">
-                    <p ref={firstRef} className="text-white 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold flex items-center justify-center pt-3.5">1</p>
-                  </div>
-                  <div className="pl-6">
-                    <p className="text-[#2A2E36] 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold">Start your adventure</p>
-                    <p className="text-[#2A2E36] 3xl:text-2xl 2xl:text-xl xl:text-lg font-normal">Speak out your story idea or plot</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>
-
-
-
-          <div>
-          <div className="flex justify-center items-center pt-20">
-            <div className="pl-52 pt-52">
-            <Image className='rounded-3xl border-8 border-black 3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[300px] xl:h-[517px] mb-14' src={Step2} alt="" />            </div>
-            <div className="mt-[580px]">
-              <Image className="" src={boy1} alt=""/>
-            </div>
-            <div className="pl-[31px]">
-              <div className="3xl:w-[645px] 3xl:h-[223px] 2xl:w-[545px] 2xl:h-[193px] xl:w-[445px] xl:h-[123px]  flex-shrink-0 rounded-lg bg-[#FCFCFC]">
-                <div className="3xl:pt-[65px] 2xl:pt-[65px] xl:pt-[25px] flex items-center justify-center">
-                  <div className="w-[62px] h-[62px] rounded-full bg-[#D68294]">
-                    <p className="text-white 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold flex items-center justify-center pt-3.5">2</p>
-                  </div>
-                  <div className="pl-6">
-                    <p ref={secRef} className="text-[#2A2E36] 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold">Pick your picture</p>
-                    <p className="text-[#2A2E36] 3xl:text-2xl 2xl:text-xl xl:text-lg font-normal">Sit back and listen as the story <br /> unfolds</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>
-
-
-          <div>
-          <div className="flex justify-center items-center pt-20">
-            <div className="pl-52 pt-52">
-            <Image className='rounded-3xl border-8 border-black 3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[300px] xl:h-[517px] mb-14' src={phone} alt="" />            </div>
-            <div className="mt-[580px]">
-              <Image className="" src={girl} alt=""/>
-            </div>
-            <div className="pl-[31px]">
-              <div className="3xl:w-[645px] 3xl:h-[223px] 2xl:w-[545px] 2xl:h-[193px] xl:w-[445px] xl:h-[123px]  flex-shrink-0 rounded-lg bg-[#FCFCFC]">
-                <div className="3xl:pt-[65px] 2xl:pt-[65px] xl:pt-[25px] flex items-center justify-center">
-                  <div className="w-[62px] h-[62px] rounded-full bg-[#D68294]">
-                    <p ref={threeRef} className="text-white 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold flex items-center justify-center pt-3.5">3</p>
-                  </div>
-                  <div className="pl-6">
-                    <p className="text-[#2A2E36] 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold">​Enjoy the tale</p>
-                    <p className="text-[#2A2E36] 3xl:text-2xl 2xl:text-xl xl:text-lg font-normal">Sit back and listen as the story <br /> unfolds</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>
-
-
-          <div>
-          <div  className="flex justify-center items-center pt-20">
-            <div className="pl-52 pt-52">
-            <Image className='rounded-3xl border-8 border-black 3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[300px] xl:h-[517px] mb-14' src={Step4} alt="" />            </div>
-            <div className="mt-[580px]">
-              <Image className="xl:w-[96px] xl-[96px]" src={boy} alt=""/>
-            </div>
-            <div className="pl-[31px]">
-              <div className="3xl:w-[645px] 3xl:h-[223px] 2xl:w-[545px] 2xl:h-[193px] xl:w-[445px] xl:h-[123px]  flex-shrink-0 rounded-lg bg-[#FCFCFC]">
-                <div className="3xl:pt-[65px] 2xl:pt-[65px] xl:pt-[25px] flex items-center justify-center">
-                  <div className="w-[62px] h-[62px] rounded-full bg-[#D68294]">
-                    <p ref={fourRef} className="text-white 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold flex items-center justify-center pt-3.5">4</p>
-                  </div>
-                  <div className="pl-6">
-                    <p className="text-[#2A2E36] 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold">Keep the magic alive</p>
-                    <p className="text-[#2A2E36] 3xl:text-2xl 2xl:text-xl xl:text-lg font-normal">Add another page to continue <br />your story</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>
-        </Carousel>;
-        </div>
-      </div>
+      <div className='w-full'><Caruselpage /></div>
 
 
       {/**************************** carousel end **************************************/}
@@ -553,15 +426,29 @@ const Landing = () => {
             <p className="text-white text-center text-4xl font-semibold">Ask us anything</p>
           </div>
           <div className="flex items-center justify-center">
-            <form action="" method="post">
+            <form action="" method="post" onSubmit={handleSubmit}>
               <div className="pt-12">
-                <input className="bg-white border-white rounded-lg text-center w-[718px] h-14 outline-none" type="email" name="text" placeholder="Full Name" required title="Valid Email Format:example@example.com" />
+                <input className="bg-white border-white rounded-lg text-center w-[718px] h-14 outline-none"             type="text"
+            name="fullName"
+            value={formData.fullName}
+            onChange={handleChange}
+            placeholder="Full Name"
+            required />
               </div>
               <div className="pt-4">
-                <input className="bg-white border-white rounded-lg text-center w-[718px] h-14 outline-none" type="email" name="Email" placeholder="email" required title="Valid Email Format:example@example.com" />
+                <input className="bg-white border-white rounded-lg text-center w-[718px] h-14 outline-none"             
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Email" required title="Valid Email Format:example@example.com" />
               </div>
               <div className="pt-4">
-                <input className="bg-white border-white rounded-lg text-center w-[718px] h-36 outline-none" type="email" name="text" placeholder="Message" required title="Valid Email Format:example@example.com" />
+                <input className="bg-white border-white rounded-lg text-center w-[718px] h-36 outline-none"            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Message"
+            required />
               </div>
               <div className="pt-10">
                 <button className="bg-[#6470D7] border-[#6470D7] rounded-md text-center w-[718px] h-14 outline-none">Submit</button>
