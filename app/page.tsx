@@ -6,7 +6,9 @@ import '../styles/globals.css';
 
 export default function Home() {
   return (
-    <Landing />
+    <div className='w-full overflow-hidden'>
+      <Landing />
+    </div>
     
   )
 }

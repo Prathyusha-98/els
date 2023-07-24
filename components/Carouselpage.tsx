@@ -55,18 +55,18 @@ const Caruselpage = () => {
   
 
   return (
-    <div className=" 3xl:h-[1110px] xl:h-[999px] 2xl:h-[1110px] bg-[#F8F7FF] pt-8 relative w-full">
+    <div className=" 3xl:h-[1110px] xl:h-[720px] 2xl:h-[1110px] bg-[#F8F7FF] pt-8 xl:pt-4 relative w-full">
       {/* ... Other content ... */}
 
       <div className="relative">
           <Image src={cloud} className=" xl:h-[190px] 2xl:h-[210px] w-full" alt=""/>
-          <div className="flex items-center justify-center"> <p className="absolute top-20 items-center text-black text-7xl font-bold leading-normal;">How it works</p></div>
-          <Image src={wave} className="absolute 3xl:top-[897px] 3xl:left-0 2xl:top-[897px] 2xl:left-0 xl:top-[797px] xl:left-0 xl:h-[204px] 2xl:h-[214px]" alt="" />
-          <Image className="absolute 3xl:top-[957px] 3xl:left-[1058px] 2xl:top-[917px] 2xl:left-[843.01px] xl:top-[827px] xl:left-[743px] xl:w-[133px] 2xl:w-[153px]" src={book} alt=""/>
-          <Image className="absolute 3xl:top-[643px] 3xl:left-[173.01px] 2xl:top-[693px] 2xl:left-[103.01px] xl:top-[593px] xl:left-[93.01px] xl:w-[243px] 2xl:w-[253px]" src={butterfly} alt=""/>
+          <div className="flex items-center justify-center"> <p className="absolute top-20 items-center text-black 3xl:text-7xl 2xl:text-6xl xl:text-5xl  font-bold leading-normal;">How it works</p></div>
+          <Image src={wave} className="absolute w-full 3xl:top-[897px] 3xl:left-0 2xl:top-[897px] 2xl:left-0 xl:top-[513px] xl:left-0 xl:h-[193px] 2xl:h-[214px]" alt="" />
+          <Image className="absolute 3xl:top-[957px] 3xl:left-[1058px] 3xl:w-[163px] 3xl:h-[104px] 2xl:top-[917px] 2xl:left-[943.01px] 2xl:w-[153px] 2xl:h-[93px] xl:top-[580px] xl:left-[743px] xl:w-[75px] xl:h-[48px] " src={book} alt=""/>
+          <Image className="absolute 3xl:top-[643px] 3xl:left-[173.01px] 2xl:top-[693px] 2xl:left-[103.01px] xl:top-[403px] xl:left-[93.01px] xl:w-[243px] 2xl:w-[253px]" src={butterfly} alt=""/>
       </div>  
 
-      <div className="flex justify-center items-center 3xl:mt-24 2xl:mt-24 xl:mt-14">
+      <div className="flex justify-center items-center 3xl:mt-24 2xl:mt-24 ">
   {carouselItems.map((item, index) => (
     <>
       <span
@@ -103,17 +103,17 @@ const Caruselpage = () => {
           {/* Your carousel slides here */}
           <div>
           <div className="flex justify-center items-center pt-20">
-            <div className="pl-24 xl:pl-44">
-              <Image className='rounded-3xl border-8 border-black 3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[280px] xl:h-[517px] mb-14' src={Step} alt="" />
+            <div className="3xl:pl-52 2xl:pl-52 xl:pl-14">
+              <Image className='rounded-3xl border-4 border-solid border-black 3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[185px] xl:h-[336px] ' src={Step} alt="" />
             </div>
-            <div className="2xl:mt-[420px] 3xl:mt-[420px] xl:mt-[380px]">
-              <Image className="xl:w-[220px] xl:h-[137px]" src={girl1} alt=""/>
+            <div className="2xl:mt-[340px] 3xl:mt-[340px] xl:mt-[160px]">
+              <Image className="xl:w-[147px] xl:h-[110px] 2xl:w-[300px] 2xl:h-[227px] 3xl:w-[320px] 3xl:h-[237px]" src={girl1} alt=""/>
             </div>
-            <div className="">
-              <div className="3xl:w-[645px] 3xl:h-[223px] 2xl:w-[545px] 2xl:h-[193px] xl:w-[445px] xl:h-[123px]  flex-shrink-0 rounded-lg bg-[#FCFCFC]">
-                <div className="3xl:pt-[65px] 2xl:pt-[65px] xl:pt-[25px] flex items-center justify-center">
+            <div className="pl-[31px] xl:pb-24">
+              <div className="3xl:w-[645px] 3xl:h-[223px] 2xl:w-[545px] 2xl:h-[193px] xl:w-[477px] xl:h-[166px]  flex-shrink-0 rounded-lg bg-[#FCFCFC]">
+                <div className="3xl:pt-[65px] 2xl:pt-[65px] xl:pt-[48px] flex items-center justify-center">
                   <div className="w-[62px] h-[62px] rounded-full bg-[#D68294]">
-                    <p  className="text-white 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold flex items-center justify-center pt-3.5">1</p>
+                    <p className="text-white 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold flex items-center justify-center pt-3.5">1</p>
                   </div>
                   <div className="pl-6">
                     <p className="text-[#2A2E36] 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold">Start your adventure</p>
@@ -126,15 +126,15 @@ const Caruselpage = () => {
           </div>
           <div>
           <div className="flex justify-center items-center pt-20">
-            <div className="2xl:pl-36 3xl:pl-56 xl:pl-48">
-            <Image className='rounded-3xl border-8 border-black 3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[280px] xl:h-[517px]  mb-14' src={Step2} alt="" />            </div>
-            <div className="mt-[380px]">
-              <Image className="xl:w-[200px] xl-[120px] 2xl:w-[250px] 2xl:h-[137px] 3xl:w-[355px] 3xl:h-[197px]" src={boy1} alt=""/>
+            <div className="2xl:pl-36 3xl:pl-56 xl:pl-28">
+            <Image className='rounded-3xl border-4 border-solid border-black 3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[185px] xl:h-[336px] mb-14' src={Step2} alt="" />            </div>
+            <div className="xl:mt-[80px] 2xl:mt-[380px] 3xl:mt-[380px]">
+              <Image className="xl:w-[171px] xl:h-[96px ] 2xl:w-[250px] 2xl:h-[137px] 3xl:w-[355px] 3xl:h-[197px]" src={boy1} alt=""/>
             </div>
-            <div className="">
-              <div className="3xl:w-[645px] 3xl:h-[223px] 2xl:w-[545px] 2xl:h-[193px] xl:w-[445px] xl:h-[123px]  flex-shrink-0 rounded-lg bg-[#FCFCFC]">
+            <div className="pl-[31px] xl:pb-24">
+              <div className="3xl:w-[645px] 3xl:h-[223px] 2xl:w-[545px] 2xl:h-[193px] xl:w-[477px] xl:h-[166px]  flex-shrink-0 rounded-lg bg-[#FCFCFC]">
                 <div className="3xl:pt-[65px] 2xl:pt-[65px] xl:pt-[25px] flex items-center justify-center">
-                  <div className="w-[62px] h-[62px] rounded-full bg-[#D68294]">
+                  <div className="w-[62px] h-[62px] rounded-full bg-[#DE976F]">
                     <p className="text-white 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold flex items-center justify-center pt-3.5">2</p>
                   </div>
                   <div className="pl-6">
@@ -150,15 +150,15 @@ const Caruselpage = () => {
 
           <div>
           <div className="flex justify-center items-center pt-20">
-            <div className="pl-48  xl:pl-48">
-            <Image className='rounded-3xl border-8 border-black 3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[280px] xl:h-[517px] mb-14' src={phone} alt="" />            </div>
-            <div className="mt-[380px]">
-              <Image className="xl:w-[180px] xl-[280px] " src={girl} alt=""/>
+            <div className="3xl:pl-56 2xl:pl-56 xl:pl-28">
+            <Image className='rounded-3xl border-4 border-solid border-black 3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[185px] xl:h-[336px] mb-14' src={phone} alt="" />            </div>
+            <div className="xl:mt-[80px] 2xl:mt-[380px] 3xl:mt-[380px]">
+              <Image className="xl:w-[154px] xl:h-[124px] 2xl:w-[219px] 2xl:h-[174px] 3xl:w-[319px] 3xl:h-[225px]" src={girl} alt=""/>
             </div>
-            <div className="pl-[31px]">
-              <div className="3xl:w-[645px] 3xl:h-[223px] 2xl:w-[545px] 2xl:h-[193px] xl:w-[445px] xl:h-[123px]  flex-shrink-0 rounded-lg bg-[#FCFCFC]">
+            <div className="pl-[31px] xl:pb-24">
+              <div className="3xl:w-[645px] 3xl:h-[223px] 2xl:w-[545px] 2xl:h-[193px] xl:w-[477px] xl:h-[166px]  flex-shrink-0 rounded-lg bg-[#FCFCFC]">
                 <div className="3xl:pt-[65px] 2xl:pt-[65px] xl:pt-[25px] flex items-center justify-center">
-                  <div className="w-[62px] h-[62px] rounded-full bg-[#D68294]">
+                  <div className="w-[62px] h-[62px] rounded-full bg-[#7AA0CD]">
                     <p  className="text-white 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold flex items-center justify-center pt-3.5">3</p>
                   </div>
                   <div className="pl-6">
@@ -174,15 +174,15 @@ const Caruselpage = () => {
 
           <div>
           <div  className="flex justify-center items-center pt-20">
-            <div className="pl-32 xl:pl-48">
-            <Image className='rounded-3xl border-8 border-black 3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[280px] xl:h-[517px] mb-14' src={Step4} alt="" />            </div>
-            <div className="mt-[380px]">
-              <Image className="xl:w-[100px] xl-[150px] 2xl:w-[150px] 2xl:h-[200px] 3xl:w-[188px] 3xl:h-[253px]" src={boy} alt=""/>
+            <div className="3xl:pl-56 2xl:pl-36 xl:pl-28">
+            <Image className='rounded-3xl border-4 border-solid border-black 3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[185px] xl:h-[336px]  mb-14' src={Step4} alt="" />            </div>
+            <div className="xl:mt-[80px] 2xl:mt-[380px] 3xl:mt-[380px]">
+              <Image className="xl:w-[114px] xl-[154px] 2xl:w-[150px] 2xl:h-[200px] 3xl:w-[188px] 3xl:h-[253px]" src={boy} alt=""/>
             </div>
-            <div className="pl-[100px]">
-              <div className="3xl:w-[645px] 3xl:h-[223px] 2xl:w-[545px] 2xl:h-[193px] xl:w-[445px] xl:h-[123px]  flex-shrink-0 rounded-lg bg-[#FCFCFC]">
+            <div className="pl-[100px] xl:pb-24">
+              <div className="3xl:w-[645px] 3xl:h-[223px] 2xl:w-[545px] 2xl:h-[193px] xl:w-[477px] xl:h-[166px]   flex-shrink-0 rounded-lg bg-[#FCFCFC]">
                 <div className="3xl:pt-[65px] 2xl:pt-[65px] xl:pt-[25px] flex items-center justify-center">
-                  <div className="w-[62px] h-[62px] rounded-full bg-[#D68294]">
+                  <div className="w-[62px] h-[62px] rounded-full bg-[#98D575]">
                     <p className="text-white 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold flex items-center justify-center pt-3.5">4</p>
                   </div>
                   <div className="pl-6">
