@@ -22,7 +22,7 @@ const Caruselpage = () => {
 
   // State to keep track of the active index
   const [activeIndex, setActiveIndex] = useState<number>(0);
-
+  const [currentSlide, setCurrentSlide] = useState(0);
   // Callback function to handle the carousel slide change
   const handleSlideChange = (currentIndex: number) => {
     setActiveIndex(currentIndex);
@@ -36,11 +36,26 @@ const Caruselpage = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    beforeChange: (_: any, nextIndex: number) => handleSlideChange(nextIndex),
+    customPaging: (i: number) => (
+      <div
+        className={
+          i === currentSlide
+            ? "dot active"
+            : i < currentSlide
+            ? "dot completed"
+            : "dot"
+        }
+      >
+        {i + 1}
+      </div>
+    ),
+    beforeChange: (oldIndex: any, newIndex: React.SetStateAction<number>) => setCurrentSlide(newIndex),
   };
 
+  
+
   return (
-    <div className=" 3xl:h-[1110px] xl:h-[999px] 2xl:h-[1110px] bg-[#F8F7FF] pt-8 relative">
+    <div className=" 3xl:h-[1110px] xl:h-[999px] 2xl:h-[1110px] bg-[#F8F7FF] pt-8 relative w-full">
       {/* ... Other content ... */}
 
       <div className="relative">
@@ -50,34 +65,41 @@ const Caruselpage = () => {
           <Image className="absolute 3xl:top-[957px] 3xl:left-[1058px] 2xl:top-[917px] 2xl:left-[843.01px] xl:top-[827px] xl:left-[743px] xl:w-[133px] 2xl:w-[153px]" src={book} alt=""/>
           <Image className="absolute 3xl:top-[643px] 3xl:left-[173.01px] 2xl:top-[693px] 2xl:left-[103.01px] xl:top-[593px] xl:left-[93.01px] xl:w-[243px] 2xl:w-[253px]" src={butterfly} alt=""/>
       </div>  
+
       <div className="flex justify-center items-center 3xl:mt-24 2xl:mt-24 xl:mt-14">
-        {carouselItems.map((item, index) => (
-          <span
-            key={index}
-            className={`w-14 h-14 rounded-full flex justify-center items-center ml-14 mr-14 z-50 ${
-              activeIndex === index ? 'bg-[#6470D7] border-4 border-[#6470D7] text-white font-bold text-lg' : 'bg-[#DBDBDB]  text-white font-bold text-lg'
-            }`}
-          >
-            {index + 1}
-          </span>
-        ))}
-      </div>
-            {/* Line connecting index indicators */}
-            <div className="flex justify-center items-center mt-4">
-        {carouselItems.map((item, index) => (
-          <div key={index} className="relative">
-            {index > 0 && (
-              <hr
-                className={`absolute left-[-250px] top-[-45px] w-[500px] h-1 ${
-                  activeIndex >= index ? '' : 'bg-[#DBDBDB] border-4 border-[#DBDBDB]'
-                } rounded-full`}
-              />
-            )}
-          </div>
-        ))}
-      </div>
-      <div className="">
-        <Slider {...settings}>
+  {carouselItems.map((item, index) => (
+    <>
+      <span
+        key={index}
+        className={`rounded-full flex justify-center items-center  z-50 ${
+          index <= currentSlide ? "border border-black" : ""
+        } ${
+          index === currentSlide
+            ? "w-14 h-14 bg-[#6470D7] text-white font-bold text-lg border-solid border-[8px] border-indigo-300 "
+            : index < currentSlide
+            ? "w-8 h-8 bg-[#6470D7] text-white font-bold text-lg"
+            : "w-8 h-8 bg-[#DBDBDB] text-white font-bold text-lg"
+        }`}
+      >
+        {index + 1}
+
+        {index === currentSlide && (
+          <span className="" />
+        )}
+      </span>
+      {index < carouselItems.length - 1 && (
+        <div
+          className={`w-24 h-1 ${
+            index < currentSlide - 0 ? "bg-[#6470D7]" : "bg-[#DBDBDB]"
+          }`}
+        />
+      )}
+    </>
+  ))}
+</div>
+
+      <div className="border-8 border-black">
+      <Slider {...settings}>
           {/* Your carousel slides here */}
           <div>
           <div className="flex justify-center items-center pt-20">

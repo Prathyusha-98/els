@@ -53,3 +53,40 @@ body {
   animation: twinkling 3s infinite;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Add your styles for the slider here */
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  background-color: #f0f0f0;
+  font-size: 24px;
+}
+
+/* Add styles for status indicators here */
+.status-indicators-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: gray;
+  margin: 0 5px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Style for the active status indicator */
+.status-indicator.active {
+  background-color: black;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
