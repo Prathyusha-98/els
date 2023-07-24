@@ -23,7 +23,7 @@ import Vector4 from "@/assets/Vector4.png"
 import tv from "@/assets/tv.png"
 import { BsFillPauseCircleFill, BsFillPlayCircleFill} from 'react-icons/bs';
 import {BsPlayCircleFill} from 'react-icons/bs'
-import phone from '@/assets/phone.gif';
+import tri from '@/assets/tri.png';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import cloud2 from "@/assets/cloud2.png"
@@ -39,7 +39,7 @@ import tree1 from "@/assets/tree1.png"
 import tree2 from "@/assets/tree2.png"
 import bu from "@/assets/bu.png"
 import fox from "@/assets/fox.png"
-import play from "@/assets/play.png"
+import play1 from "@/assets/play1.png"
 import apple from "@/assets/apple.png"
 import Vector6 from "@/assets/Vector6.png"
 import path from "@/assets/Path.png"
@@ -107,6 +107,16 @@ const Landing = () => {
   const handleChange = (e: { target: { name: any; value: any; }; }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  const handleFocus = (event: { target: { placeholder: string; }; }) => {
+    event.target.placeholder = "";
+  };
+  const handleBlur =
+  (placeholder: string) =>
+  (event: React.FocusEvent<HTMLInputElement>) => {
+    event.target.placeholder = placeholder;
+  };
+
 
   const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
@@ -221,7 +231,7 @@ const Landing = () => {
                       <input type="email" className="bg-[#e8e8fd] border-[#e8e8fd] text-center w-[189px] h-[26px] outline-none" name="Email" placeholder="Enter your email here *" required title="Valid Email Format:example@example.com" />
                     </form>
                   </div>
-                  <div className='pl-[132px]'>
+                  <div className='pl-[152px]'>
                     <div className="w-[50px] h-[50px] bg-[#6470d7] rounded-full">
                       <div className="flex items-center justify-center pt-2">
                         <Image alt='' src={mail} />
@@ -246,26 +256,21 @@ const Landing = () => {
           <Image className="absolute top-[459px] left-0" src={boy} alt='' />
         </div>
         <div className='flex items-center justify-center'>
-          <div>
-            <p className="text-[#2a2e36] font-poppins 3xl:text-7xl 2xl:text-6xl xl:text-5xl font-extrabold leading-snug tracking-wider text-center xl:pt-[198px] 2xl:pt-[98px] 3xl:pt-[98px] xl:pl-[200px] 2xl:pl-[254px] 3xl:pl-[254px]">See it in action</p>
-            <p className="text-[#2a2e36] font-poppins text-xl font-medium leading-normal w-[756px] xl:pl-[290px] 2xl:pl-[262px] 3xl:pl-[254px] pt-[23px]">Watch this video to see how Endless Stories transforms your child&apos;s voice input into a captivating story.</p>
+          <div className='pt-32'>
+            <p className="text-[#2a2e36] font-poppins 3xl:text-7xl 2xl:text-6xl xl:text-5xl font-extrabold leading-snug tracking-wider text-center ">See it in action</p>
+            <p className="text-[#2a2e36] font-poppins text-xl font-medium leading-normal w-[756px] 3xl:pr-56 3xl:pl-24 3xl:pt-[24px] 2xl:pr-56 2xl:pl-36 2xl:pt-[24px] xl:pr-48 xl:pl-48 xl:pt-[24px]">Watch this video to see how Endless Stories transforms your child&apos;s voice input into a captivating story.</p>
           </div>
-          <div className="relative 3xl:pt-[65px]  2xl:pt-[85px] xl:pt-[175px] pl-[181px] xl:pl-[61px]">
+          <div className="relative mt-56">
             <div>
-              <Image className='3xl:w-[620px] 3xl:h-[737px]  2xl:w-[600px] 2xl:h-[700px]' src={tv} alt='' />
-            </div>
-            <div className='relative'>
-              <video
-                width="320"
-                height="240"
+            <video
                 ref={videoRef}
-                onClick={handlePlayPause} className='3xl:w-[560px] 3xl:h-[410px] 2xl:w-[435px] 2xl:h-[400px] xl:w-[329px] xl:h-[300px] 3xl:top-[-575px] 3xl:left-[10px]  2xl:top-[-556px] 2xl:left-[58px] xl:top-[-414px] xl:left-[47px] absolute rounded-3xl' >
+                onClick={handlePlayPause} className='2xl:pt-8 xl:pt-8 3xl:w-[503px] 3xl:h-[501px] 2xl:w-[495px] 2xl:h-[495px] xl:w-[475px] xl:h-[475px] ' >
                 <source src="/kin.mp4" type="video/mp4" />
               </video>
-              <button className="absolute 3xl:top-[-390px] 3xl:left-[280px] 2xl:top-[-340px] 2xl:left-[280px]  xl:top-[-270px] xl:left-[230px] transform -translate-x-1/2 -translate-y-1/2" onClick={handlePlayPause}>
-                {isPlaying ? <BsFillPauseCircleFill className='w-24 h-24 fill-white' /> : <BsPlayCircleFill className='w-24 h-24 fill-white'/>}
+              <button className="absolute 3xl:top-[280px] 3xl:left-[250px] 2xl:top-[280px] 2xl:left-[250px]  xl:top-[280px] xl:left-[230px] transform -translate-x-1/2 -translate-y-1/2" onClick={handlePlayPause}>
+                {isPlaying ? '' : <BsPlayCircleFill className='w-24 h-24 fill-white'/>}
               </button>
-            </div>
+              </div>
           </div>
         </div>
       </div>
@@ -275,14 +280,14 @@ const Landing = () => {
 
       <div className="bg-[#7A85DE] w-full h-[722px]">
         <div className='relative'>
-          <Image className="absolute top-[69px] left-[146px] xl:w-[270px] xl:h-[107px] 2xl:w-[404px] 2xl:h-[127px] " src={cloud2} alt=''/>
-          <Image className="absolute top-[264px] left-[677px]"  src={co} alt=''/>
+          <Image className="absolute top-[69px] left-[146px] xl:top-[69px] xl:left-[120px] xl:w-[270px] xl:h-[107px] 2xl:w-[404px] 2xl:h-[127px]  " src={cloud2} alt=''/>
+          <Image className="absolute top-[264px] left-[677px] xl:top-[264px] xl:left-[477px]"  src={co} alt=''/>
           <Image className="absolute 3xl:top-[438px] 3xl:left-[1359px] 2xl:top-[438px] 2xl:left-[1159px] xl:top-[438px] xl:left-[894px] " src={butterfly2} alt=''/>
           <Image className="absolute top-[285px] left-0" src={giraf} alt=''/>
           <Image className="absolute top-[129px] left-[1359px] xl:top-[97px] xl:left-[1029px] 2xl:top-[197px] 2xl:left-[1229px] xl:w-[110px] xl:h-[42px] 2xl:w-[135px] 2xl:h-[52px]" src={Vector7} alt=''/>
         </div>
-        <div className='w-full pt-12'>
-          <p className="text-white text-center font-poppins text-5xl font-semibold leading-normal my-auto pt-12">What Parents and Teachers Say <br/>About Endless Stories</p>
+        <div className='w-full pt-12 '>
+          <p className=" text-white text-center font-poppins text-5xl font-semibold leading-normal my-auto pt-12">What Parents and Teachers Say <br/>About Endless Stories</p>
         </div>
         <div>
               <Carousel responsive={responsive}>
@@ -329,25 +334,25 @@ const Landing = () => {
             <div className="flex 3xl:w-[340px] 3xl:h-[400px] 2xl:w-[300px] 2xl:h-[380px] xl:w-[240px] xl:h-[320px] flex-col justify-center items-center flex-shrink-0 rounded-[47px] bg-white bg-opacity-60 m-6">
               <div className="text-[#1E1E1E] text-center font-poppins text-lg font-medium leading-normal">
                 <Image src={designthinking} alt='' />
-                <p>Encourages <br/>Creativity and <br/> Learning</p>
+                <p className='pt-8'>Encourages <br/>Creativity and <br/> Learning</p>
               </div>
             </div>
             <div className="flex 3xl:w-[340px] 3xl:h-[400px] 2xl:w-[300px] 2xl:h-[380px] xl:w-[240px] xl:h-[320px] flex-col justify-center items-center flex-shrink-0 rounded-[47px] bg-white bg-opacity-60 m-6">
               <div className="text-[#1E1E1E] text-center font-poppins text-lg font-medium leading-normal">
                 <Image src={easytouse} alt='' />
-                <p>User-Friendly <br/>Experience</p>
+                <p className='pt-8'>User-Friendly <br/>Experience</p>
               </div>
             </div>
             <div className="flex 3xl:w-[340px] 3xl:h-[400px] 2xl:w-[300px] 2xl:h-[380px] xl:w-[240px] xl:h-[320px] flex-col justify-center items-center flex-shrink-0 rounded-[47px] bg-white bg-opacity-60 m-6">
               <div className="text-[#1E1E1E] text-center font-poppins text-lg font-medium leading-normal">
                 <Image src={connection} alt='' />
-                <p>Connect with <br/>others via stories</p>
+                <p className='pt-8' >Connect with <br/>others via stories</p>
               </div>
             </div>
             <div className="flex 3xl:w-[340px] 3xl:h-[400px] 2xl:w-[300px] 2xl:h-[380px] xl:w-[240px] xl:h-[320px] flex-col justify-center items-center flex-shrink-0 rounded-[47px] bg-white bg-opacity-60 m-6">
               <div className="text-[#1E1E1E] text-center font-poppins text-lg font-medium leading-normal">
                 <Image src={network1} alt='' />
-                <p>Share your creation <br/>with others</p>
+                <p className='pt-8'>Share your creation <br/>with others</p>
               </div>
             </div>
           </div>
@@ -393,7 +398,7 @@ const Landing = () => {
         </div>
         <div className="flex w-[202px] h-[62px] justify-center items-center gap-4 flex-shrink-0">
           <div className="flex justify-center items-center">
-            <div><Image src={play} alt="" className='w-[62px] h-[62px]'/></div>
+            <div className="flex justify-center items-center relative"><div className='w-[62px] h-[62px] bg-black bg-opacity-75 shadow-md rounded-full '><Image src={tri} alt='' className='ml-6 mt-6'/></div></div>
             <div className="pl-4">
               <p className='text-black text-center font-poppins text-xs font-semibold leading-[14px]'>
                 See How it works!
@@ -404,7 +409,7 @@ const Landing = () => {
       </div>
     </div>
     <div className="2xl:pl-[328px] 3xl:pl-[318px] xl:pl-[130px] pt-[50px]">
-      <div className="rounded-3xl 3xl:w-[498px] 3xl:h-[637px] 2xl:w-[478px] 2xl:h-[637px] xl:w-[410px] xl:h-[537px] border-[22px] border-black bg-[#c5c8ca]"></div>
+      <div className="rounded-3xl 3xl:w-[498px] 3xl:h-[637px] 2xl:w-[478px] 2xl:h-[637px] xl:w-[410px] xl:h-[537px] border-[22px] border-solid border-black bg-[#c5c8ca]"></div>
     </div>
   </div>
 </div>
@@ -428,7 +433,7 @@ const Landing = () => {
           <div className="flex items-center justify-center">
             <form action="" method="post" onSubmit={handleSubmit}>
               <div className="pt-12">
-                <input className="bg-white border-white rounded-lg text-center w-[718px] h-14 outline-none"             type="text"
+                <input onBlur={handleBlur("Full Name")} onFocus={handleFocus} className="p-8 placeholder:float-left  bg-white border-white rounded-lg w-[718px] h-14 outline-none"             type="text"
             name="fullName"
             value={formData.fullName}
             onChange={handleChange}
@@ -436,7 +441,7 @@ const Landing = () => {
             required />
               </div>
               <div className="pt-4">
-                <input className="bg-white border-white rounded-lg text-center w-[718px] h-14 outline-none"             
+                <input onBlur={handleBlur("Email")} onFocus={handleFocus} className="p-8 placeholder:float-left  bg-white border-white rounded-lg  w-[718px] h-14 outline-none"             
             type="email"
             name="email"
             value={formData.email}
@@ -444,7 +449,7 @@ const Landing = () => {
             placeholder="Email" required title="Valid Email Format:example@example.com" />
               </div>
               <div className="pt-4">
-                <input className="bg-white border-white rounded-lg text-center w-[718px] h-36 outline-none"            name="message"
+                <input onBlur={handleBlur("Message")} onFocus={handleFocus} className="p-8 placeholder:float-left placeholder:pb-24 bg-white border-white rounded-lg  w-[718px] h-36 outline-none"            name="message"
             value={formData.message}
             onChange={handleChange}
             placeholder="Message"
@@ -466,7 +471,7 @@ const Landing = () => {
                   
                   <div>
                     <form action="" className="flex items-center justify-center">
-                      <input type="email" className="bg-[#e8e8fd] border-[#e8e8fd] text-center w-[189px] h-[26px] outline-none" name="Email" placeholder="Enter your email here *" required title="Valid Email Format:example@example.com" />
+                      <input onBlur={handleBlur("Enter your email here *")} onFocus={handleFocus} type="email" className=" bg-[#e8e8fd] border-[#e8e8fd] w-[189px] h-[26px] outline-none" name="Email" placeholder="Enter your email here *" required title="Valid Email Format:example@example.com" />
                     </form>
                   </div>
                   <div className='pl-[258px]'>
