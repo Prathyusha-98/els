@@ -137,7 +137,7 @@ const Landing = () => {
       {/**************************** Video start **************************************/}
       <div className="bg-white w-full h-[795px]">
         <div className='relative '>
-          <Image className="absolute top-[0] 3xl:left-[1508px] 2xl:left-[1318px] xl:left-[1055px] lg:left-[1055px]"  src={buter} alt='' />
+          <Image className="absolute top-[0] 3xl:left-[1508px] 2xl:left-[1318px] xl:left-[1055px] lg:left-[800px]"  src={buter} alt='' />
           <Image className="absolute top-[82px] left-[98px]" src={clouds4} alt='' />
           <Image className="absolute top-[130px] left-[631px]" src={Vector4} alt='' />
           <Image className="absolute top-[459px] lg:top-[509px] left-0" src={boy} alt='' />
