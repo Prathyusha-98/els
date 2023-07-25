@@ -73,10 +73,10 @@ const Ask = () => {
           <div className="relative">
             <Image className="absolute 3xl:top-[82px] 2xl:left-0 2xl:top-[82px] xl:top-[62px] xl:left-[9px] xl:w-[308px] lg:top-[62px] lg:left-[9px] lg:w-[308px] 3xl:left-0 3xl:w-[418px] sm:w-[236px] sm:h-[78px] xs:w-[133px] xs:h-[43px] md:w-[236px] md:h-[78px]" src={cloud2} alt=""/>
             <Image className="absolute 3xl:top-[100px] 3xl:left-[1324px] 2xl:top-[100px] 2xl:left-[1224px] xl:top-[100px] xl:left-[1024px] lg:top-[100px] lg:left-[824px] sm:w-[115px] sm:h-[46px] sm:top-[629px] sm:left-[288px] md:w-[115px] md:h-[46px] md:top-[629px] md:left-[288px] xs:w-[65px] xs:h-[26px] xs:top-[354px] xs:left-[162px]" src={Vector7} alt=""/>
-            <Image className="absolute 3xl:top-[135.15px] 3xl:left-[1420px] 2xl:top-[185.15px] 2xl:left-[1220px] 2xl:w-[280px] xl:top-[160px] xl:left-[1060px] xl:w-[200px] lg:top-[160px] lg:left-[760px] lg:w-[200px] sm:w-[231px] sm:h-[94px] sm:left-[373px] sm:top-[652px] md:w-[231px] md:h-[94px] md:left-[373px] md:top-[652px] xs:w-[130px] xs:h-[53px] xs:left-[210px] xs:top-[367px]" src={Vector6} alt=""/>
+            <Image className="absolute 3xl:top-[135.15px] 3xl:left-[1420px] 2xl:top-[185.15px] 2xl:left-[1220px] 2xl:w-[280px] xl:top-[160px] xl:left-[1060px] xl:w-[200px] lg:top-[160px] lg:left-[760px] lg:w-[200px] gl:left-[1160px] sm:w-[231px] sm:h-[94px] sm:left-[373px] sm:top-[652px] md:w-[231px] md:h-[94px] md:left-[373px] md:top-[652px] xs:w-[130px] xs:h-[53px] xs:left-[210px] xs:top-[367px]" src={Vector6} alt=""/>
           </div>
-          <div className="3xl:pt-[148px] 2xl:pt-[158px] xl:pt-[168px] lg:pt-[178px] md:pt-[188px] sm:pt-[198px] xs:pt-12">
-            <p className="text-white text-center 3xl:text-4xl 2xl:text-4xl xl:text-4xl lg:text-4xl md:text-4xl sm:text-4xl xs:text-xl font-semibold">Ask us anything</p>
+          <div className="3xl:pt-[148px] 2xl:pt-[158px] xl:pt-[168px] lg:pt-[178px] gl:pt-[138px] md:pt-[188px] sm:pt-[198px] xs:pt-12">
+            <p className="text-white text-center 3xl:text-4xl 2xl:text-4xl gl:text-4xl xl:text-4xl lg:text-4xl md:text-4xl sm:text-4xl xs:text-xl font-semibold">Ask us anything</p>
           </div>
           <div className="flex items-center justify-center">
             <form action="" method="post" onSubmit={handleSubmit}>

@@ -12,14 +12,14 @@ const Commingsoon = () => {
         <>
               {/**************************** section3 start **************************************/}
 
-      <div className='bg-[#7A85DE] w-100% h-[722px] lg:block md:hidded sm:hidden xs:hidden'>
+      <div className='bg-[#7A85DE] w-100% h-[722px] gl:h-[744px] lg:block md:hidded sm:hidden xs:hidden'>
         <div className='relative'>
           <Image className='absolute top-[92px] 2xl:left-[147px] 3xl:left-[147px] xl:left-[137px] lg:left-[137px]' src={vector1} alt=''/>
           <Image className='absolute top-[595px] 2xl:left-[287px] 3xl:left-[382px] xl:left-[200px] lg:left-[200px]' src={vector2} alt=''/>
           <Image className='absolute top-[210px] 2xl:left-[767px] 3xl:left-[899px] xl:left-[721px] lg:left-[721px]' src={vector3} alt=''/>
           <Image className='absolute top-[50px] 2xl:left-[1215px] 3xl:left-[1407px] xl:left-[959px] lg:left-[759px]' src={sun} alt=''/>
         </div>
-        <div className='flex items-center justify-center 3xl:pt-[55px] 3xl:pl-[87px]  2xl:pt-[55px] 2xl:pl-[87px] xl:pt-[155px] xl:pl-[87px] lg:pt-[255px] lg:pl-[87px]'>
+        <div className='flex items-center justify-center 3xl:pt-[55px] 3xl:pl-[87px]  2xl:pt-[55px] 2xl:pl-[87px] xl:pt-[155px] xl:pl-[87px] lg:pt-[255px] lg:pl-[87px] gl:pt-[100px] gl:pl-[77px]'>
           <div>
             <div>
               <p className='text-[#F8F7FF] text-shadow-md 3xl:text-7xl 2xl:text-6xl xl:text-5xl lg:text-4xl font-poppins font-semibold leading-normal'>Coming soon...</p>
@@ -47,7 +47,7 @@ const Commingsoon = () => {
               </div>
             </div>
           </div>
-          <div className='w-[830px]'><Image src={animal} alt='' /></div>
+          <div className='w-[830px]'><Image className='' src={animal} alt='' /></div>
         </div>
       </div>
       {/**************************** section3 end **************************************/}

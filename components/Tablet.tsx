@@ -12,8 +12,8 @@ const Tablet =() =>{
               {/**************************** Tablat video part start **************************************/}
 <div className="bg-white h-[722px] lg:block md:hidden sm:hidden xs:hidden ">
   <div className="relative">
-    <Image className="absolute 3xl:top-[376px] 3xl:left-[842px] 2xl:top-[376px] 2xl:left-[742px] 2xl:w-[208px] 2xl:h-[301px]  xl:top-[396px] xl:left-[582px] xl:w-[140px] xl:h-[201px] lg:top-[396px] lg:left-[482px] lg:w-[120px] lg:h-[195px]" src={fox} alt="" />
-    <Image className="absolute 3xl:top-[155px] 3xl:left-[1556px] 2xl:top-[155px] 2xl:left-[1406px] 2xl:w-[132px] xl:top-[105px] xl:left-[1123px] xl:w-[132px] lg:top-[105px] lg:left-[1123px] lg:w-[132px]" src={bu} alt="" />
+    <Image className="absolute 3xl:top-[376px] 3xl:left-[842px] 2xl:top-[376px] 2xl:left-[742px] 2xl:w-[208px] 2xl:h-[301px]  xl:top-[396px] xl:left-[582px] xl:w-[140px] xl:h-[201px] lg:top-[396px] lg:left-[482px] lg:w-[120px] lg:h-[195px] gl:left-[692px]" src={fox} alt="" />
+    <Image className="absolute 3xl:top-[155px] 3xl:left-[1556px] 2xl:top-[155px] 2xl:left-[1406px] 2xl:w-[132px] xl:top-[105px] xl:left-[1123px] xl:w-[132px] lg:top-[105px] lg:left-[1123px] lg:w-[132px] gl:left-[1234px]" src={bu} alt="" />
     <Image className="absolute top-0 left-0" src={tree1} alt="" />
     <Image className="absolute top-[558px] left-0" src={tree2} alt="" />
   </div>
