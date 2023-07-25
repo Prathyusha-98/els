@@ -14,6 +14,7 @@ module.exports = {
       },
       screens: {
         '3xl': '1728px',
+        'xs' : '360px'
       },
       textShadow: {
         md: '0px 4px 20px 0px rgba(0, 0, 0, 0.25)',

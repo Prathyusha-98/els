@@ -1,18 +1,37 @@
 'use client'
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Image from 'next/image';
 import heroboy from '@/assets/heroboy.png';
 import Link from 'next/link';
 import { BsFillPlayCircleFill} from 'react-icons/bs';
 import apple from "@/assets/apple.png"
 import Stars from './Stars';
-
+import { GiHamburgerMenu } from 'react-icons/gi';
+import boygroup from '@/assets/boygroup.png'
 
 function Header () {
+  const [openmenu, setOpenmenu] = useState(false);
+
+  useEffect(() => {
+    const handleClick = (e: any) => {
+      if (openmenu) {
+        setOpenmenu(false);
+      }
+    };
+  
+    document.addEventListener("click", handleClick);
+  
+    return () => {
+      document.removeEventListener("click", handleClick);
+    };
+  }, [openmenu]);
+  
+  // ...
+  
     return(
-       
-        
-        <div className='relative bg-uni w-full xl:h-[675px] 3xl:h-[975px] 2xl:h-[875px] lg:h-[575px]'>
+      <>
+              
+              <div className='relative bg-uni w-full xl:h-[675px] 3xl:h-[975px] 2xl:h-[875px] lg:h-[575px] lg:block md:hidden sm:hidden xs:hidden'>
         <Stars />
         {/* image of animation*/}
         <div className='flex justify-center items-center'>
@@ -52,9 +71,9 @@ function Header () {
           <Image className='animate-custom-bounce' src={heroboy} alt="heroboy"/>
           </div>
         </div>
-          {/***********************************  Header start ********************************** */}
-          <div className="flex absolute top-0 ">
-                    <p className="text-white text-center text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl font-normal leading-normal 3xl:mt-[53px] 3xl:mr-[513px] 3xl:ml-[126px]  2xl:mt-[53px] 2xl:mr-[413px] 2xl:ml-[126px] xl:mt-[43px] xl:mr-[370px] xl:ml-[66px] lg:mt-[33px] lg:mr-[270px] lg:ml-[66px] md:mt-[23px] md:mr-[200px] md:ml-[46px]" >Endless Stories</p>
+          {/***********************************  Header start for screen size >768px ********************************** */}
+          <div className="lg:flex absolute top-0 md:hidden">
+                    <p className="text-white text-center text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl font-normal leading-normal 3xl:mt-[53px] 3xl:mr-[513px] 3xl:ml-[126px]  2xl:mt-[53px] 2xl:mr-[413px] 2xl:ml-[126px] xl:mt-[43px] xl:mr-[370px] xl:ml-[66px] lg:mt-[33px] lg:mr-[270px] lg:ml-[66px]" >Endless Stories</p>
                 
                 <ul className="flex 3xl:mt-[63px] 3xl:mr-[15px] 2xl:mt-[63px] 2xl:mr-[100px] xl:mt-[43px] xl:mr-[1px] lg:mt-[33px] lg:mr-[15px]">
                     <li><Link  className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-white leading-normal' href="/">Home</Link></li>
@@ -64,10 +83,101 @@ function Header () {
                     <li ><Link className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-white leading-normal'  href="">Contact</Link></li>
                 </ul>
           </div>
-          {/********************************** Header end ******************************/}
+          
+          {/********************************** Header end for screen size >768px******************************/}
         </div>
 
 
+
+
+
+
+
+         {/********************************** Mobile screen size <=768px******************************/}
+
+        <div className='relative bg-uni w-full md:h-[1423px] sm:h-[1423px] xs:h-[800px] lg:hidden md:block xs:block'>
+          <div>
+        <div className='z-50 w-full sticky'>
+        <div className='items-center justify-between flex bg-transparent pt-4 px-2 pb-14'>
+          <div className='font-bold sm:text-2xl cursor-pointer flex items-center text-white'>
+            <Link href="/">
+              <div className='flex items-center md:ml-64 sm:ml-64 xs:ml-24 mt-5'>
+                <h1 className="font-semibold ml-2 md:text-4xl sm:text-4xl xs:text-3xl text-white">Endless Stories</h1>
+              </div>
+            </Link>
+          </div>
+          <div onClick={() => setOpenmenu(!openmenu)} className='text-3xl absolute  pl-8 top-10 cursor-pointer'>
+            <GiHamburgerMenu className='fill-white  w-10 h-8' name={openmenu ? 'close' : 'menu'} />
+          </div>
+
+          <ul className={` items-center pb-12 absolute  bg-white z-[-1] left-0 md:w-[516px] md:h-[1423px] sm:w-[516px] sm:h-[1423px] xs:w-[291px] xs:h-[800px] pl-9 transition-all duration-500 ease-in ${openmenu ? 'top-0 ' : 'top-[-1680px]'}`}>
+            <li className="mx-6 my-6 md:my-0">
+              <Link href={'/'} className="text-black  hover:font-bold hover:underline underline-offset-8 block p-2 text-sm font-semibold pr-10   " >Home</Link>
+            </li>
+            <li className="mx-6 my-6 md:my-0">
+              <Link href={'/aboutfeatures'} className="text-black hover:font-bold hover:underline underline-offset-8 block p-2 text-sm font-semibold pr-10   " >About Us</Link>
+            </li>
+            <li className="mx-6 my-6 md:my-0">
+              <Link href={'/#products'} className="text-black  hover:font-bold hover:underline underline-offset-8 block p-2 text-sm font-semibold pr-10   " >Features</Link>
+            </li>
+            <li className="mx-6 my-6 md:my-0">
+              <Link href={'/contact'} className="text-black hover:font-bold hover:underline underline-offset-8 block p-2 text-sm font-semibold pr-10   " >Contact</Link>
+            </li>
+            <li className="mx-6 my-6 md:my-0">
+              <Link href={'/contact'} className="text-black hover:font-bold hover:underline underline-offset-8 block p-2 text-sm font-semibold pr-10   " >Contact</Link>
+            </li>
+            <li className="mx-6 my-6 md:my-0">
+              <Link href={'/contact'} className="text-black  hover:font-bold hover:underline underline-offset-8 block p-2 text-sm font-semibold pr-10   " >Contact</Link>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+        <div className=' items-center justify-center sm:pt-24 md:pt-24 xs:pt-0'>
+          <Image src={boygroup} alt='' />
+          <div className='flex items-center justify-center sm:pt-28 lg:pt-28 xs:pt-10'>
+          <p className='font-normal xs:text-2xl sm:text-3xl md:text-3xl text-white xs:w-[208px] xs:h-[42px] sm:w-[342px] sm:h-[67px] md:w-[352px] md:h-[77px] text-center '>Endless Stories</p>
+          </div>
+          <div className='flex items-center justify-center'>
+          <p className='font-normal xs:text-sm sm:text-lg md:text-xl text-white xs:w-[208px] xs:h-[42px] sm:w-[369px] sm:h-[74px] md:w-[369px] md:h-[74px]  text-center'>Transform your childs imagination into storybooks . </p>
+          </div>
+
+          <div>
+            <div className="flex pt-6 justify-center items-center">
+              <div className="flex sm:w-[202px] sm:h-[62px] md:w-[202px] md:h-[62px] xs:w-[146px] xs:h-[45px] justify-center items-center gap-4 flex-shrink-0">
+                <div className="flex justify-center items-center">
+                  <div><BsFillPlayCircleFill className='sm:w-[59px] sm:h-[59px] md:w-[59px] md:h-[59px] xs:w-[33px] xs:h-[33px] fill-white'/></div>
+                  <div className="pl-4 xs:pl-2">
+                    <p className='text-white text-center font-poppins text-xs xs:text-[10px] font-semibold leading-[14px]'>
+                      See How it works!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex pt-10 justify-center items-center">
+              <div className="pl-9 pr-4">
+                <div className="sm:w-[190px] sm:h-[62px] md:w-[190px] md:h-[62px] xs:w-[146px] xs:h-[48px] flex-shrink-0 rounded-md bg-black bg-opacity-75 shadow-md pr-2">
+                  <div className="flex justify-center items-center sm:pt-3 md:pt-3 xs:pt-1">
+                    <div className="pr-1.5 xs:w-[22px] xs:h-[27px] " ><Image src={apple} alt="" /></div>
+                    <div className="pl-1.5">
+                      <p className='pb-[7px] xs:pb-[2px] text-white font-semibold text-sm xs:text-[10px] leading-4'>
+                        Download on the 
+                      </p>
+                      <p className='text-white text-center font-semibold text-lg xs:text-sm leading-4 xs:leading-normal'>
+                        App Store
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          </div>
+        </div>
+       {/********************************** Mobile screen size <=768px end******************************/}
+      </>
     )
 }
 
