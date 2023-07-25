@@ -223,7 +223,7 @@ const Caruselpage = () => {
           <Image className='sm:left-[450px] sm:top-[34px] md:left-[450px] md:top-[34px] xs:left-[243px] xs:top-[19px] absolute' src={cloudmob} alt='' />
       </div> 
       <div className='flex items-center justify-center md:pt-[129px] sm:pt-[129px] xs:pt-[73px]'>
-        <p className='xs:w-[130px] xs:h-[30px] xs:text-xl sm:w-[230px] sm:h-[53px] sm:text-4xl md:w-[240px] md:h-[63px] md:text-4xl font-bold'>How it works</p>
+        <p className='xs:w-[130px] xs:h-[30px] xs:text-xl sm:w-[230px] sm:h-[53px] sm:text-4xl md:w-[240px] md:h-[63px] md:text-4xl font-bold text-[#2A2E36]'>How it works</p>
       </div>
       <div className="flex justify-center items-center md:pb-[126px] sm:pb-[126px] xs:pb-[57px]">
         {carouselItems.map((item, index) => (
@@ -268,8 +268,8 @@ const Caruselpage = () => {
                     <p className="text-white font-extrabold flex items-center justify-center md:pt-3.5 sm:pt-3.5 xs:pt-1">1</p>
                   </div>
                   <div className="pl-6">
-                    <p className="font-extrabold xs:text-base sm:text-lg md:text-xl">Start your adventure</p>
-                    <p className="font-normal xs:text-[10px] sm:text-sm md:text-base">Speak out your story idea or plot</p>
+                    <p className="font-extrabold xs:text-base sm:text-lg md:text-xl text-[#2A2E36]">Start your adventure</p>
+                    <p className="font-normal xs:text-[10px] sm:text-sm md:text-base text-[#2A2E36]">Speak out your story idea or plot</p>
                   </div>
                 </div>
               </div>
@@ -296,8 +296,8 @@ const Caruselpage = () => {
                     <p  className="text-white font-extrabold flex items-center justify-center md:pt-3.5 sm:pt-3.5 xs:pt-1">2</p>
                   </div>
                   <div className="pl-6">
-                    <p className="font-extrabold xs:text-base sm:text-lg md:text-xl">Start your adventure</p>
-                    <p className="font-normal xs:text-[10px] sm:text-sm md:text-base">Speak out your story idea or plot</p>
+                    <p className="font-extrabold xs:text-base sm:text-lg md:text-xl text-[#2A2E36]">Pick your picture</p>
+                    <p className="font-normal xs:text-[10px] sm:text-sm md:text-base text-[#2A2E36]">Sit back and listen as the story <br /> unfolds</p>
                   </div>
                 </div>
               </div>
@@ -325,8 +325,8 @@ const Caruselpage = () => {
                     <p className="text-white font-extrabold flex items-center justify-center md:pt-3.5 sm:pt-3.5 xs:pt-1">3</p>
                   </div>
                   <div className="pl-6">
-                    <p className=" font-extrabold xs:text-base sm:text-lg md:text-xl">Start your adventure</p>
-                    <p className="font-normal xs:text-[10px] sm:text-sm md:text-base">Speak out your story idea or plot</p>
+                    <p className=" font-extrabold xs:text-base sm:text-lg md:text-xl text-[#2A2E36]">Enjoy the tale</p>
+                    <p className="font-normal xs:text-[10px] sm:text-sm md:text-base text-[#2A2E36]">Sit back and listen as the story <br /> unfolds</p>
                   </div>
                 </div>
               </div>
@@ -354,8 +354,8 @@ const Caruselpage = () => {
                     <p className="text-white font-extrabold flex items-center justify-center md:pt-3.5 sm:pt-3.5 xs:pt-1">4</p>
                   </div>
                   <div className="pl-6">
-                    <p className=" font-extrabold xs:text-base sm:text-lg md:text-xl">Start your adventure</p>
-                    <p className="font-normal xs:text-[10px] sm:text-sm md:text-base">Speak out your story idea or plot</p>
+                    <p className=" font-extrabold xs:text-base sm:text-lg md:text-xl text-[#2A2E36]">Keep the magic alive</p>
+                    <p className="font-normal xs:text-[10px] sm:text-sm md:text-base text-[#2A2E36]">Add another page to continue <br />your story</p>
                   </div>
                 </div>
               </div>
