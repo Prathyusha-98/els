@@ -69,7 +69,7 @@ const Ask = () => {
         <>
          {/**************************** Ask us anything start **************************************/}
 
-      <div className="bg-[#7A85DE] w-full 3xl:h-[652px] 2xl:h-[652px] xl:h-[652px] lg:h-[652px] md:h-[824px] sm:h-[824px] xs:h-[464px] section-six">
+      <div id='contact' className="bg-[#7A85DE] w-full 3xl:h-[652px] 2xl:h-[652px] xl:h-[652px] lg:h-[652px] md:h-[824px] sm:h-[824px] xs:h-[464px] section-six">
           <div className="relative">
             <Image className="absolute 3xl:top-[82px] 2xl:left-0 2xl:top-[82px] xl:top-[62px] xl:left-[9px] xl:w-[308px] lg:top-[62px] lg:left-[9px] lg:w-[308px] 3xl:left-0 3xl:w-[418px] sm:w-[236px] sm:h-[78px] xs:w-[133px] xs:h-[43px] md:w-[236px] md:h-[78px]" src={cloud2} alt=""/>
             <Image className="absolute 3xl:top-[100px] 3xl:left-[1324px] 2xl:top-[100px] 2xl:left-[1224px] xl:top-[100px] xl:left-[1024px] lg:top-[100px] lg:left-[824px] sm:w-[115px] sm:h-[46px] sm:top-[629px] sm:left-[288px] md:w-[115px] md:h-[46px] md:top-[629px] md:left-[288px] xs:w-[65px] xs:h-[26px] xs:top-[354px] xs:left-[162px]" src={Vector7} alt=""/>

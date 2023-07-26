@@ -35,7 +35,7 @@ const Videosec = ()=>{
         </div>
         <div className='flex items-center justify-center'>
           <div className='pt-32 xl:pt-40 lg:pt-28 3xl:mr-[198px] 2xl:mr-[168px] xl:mr-[138px] lg:mr-[108px]'>
-            <p className="text-[#2a2e36] 3xl:text-7xl 2xl:text-6xl xl:text-5xl lg:text-[34px] font-extrabold leading-snug tracking-wider text-center ">See it in action</p>
+            <p id='see' className="text-[#2a2e36] 3xl:text-7xl 2xl:text-6xl xl:text-5xl lg:text-[34px] font-extrabold leading-snug tracking-wider text-center ">See it in action</p>
             <p className="text-[#2a2e36] 3xl:w-[630px] 3xl:h-[108px] 3xl:text-3xl 3xl:pt-[23px] 2xl:w-[566px] 2xl:h-[108px] 2xl:text-2xl 2xl:pt-[23px] xl:w-[456px] xl:h-[108px] xl:text-2xl xl:pt-[23px] xl:pl-10 lg:w-[426px] lg:h-[108px] lg:text-xl lg:pt-[13px] lg:pl-[75px] ">Watch this video to see how Endless Stories transforms your child&apos;s voice input into a captivating story.</p>
           </div>
           <div className="relative mt-56">

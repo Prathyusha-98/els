@@ -22,10 +22,10 @@ const Support = () => {
               
               <ul className="flex 3xl:mt-[63px] 3xl:mr-[15px] 2xl:mt-[63px] 2xl:mr-[100px] xl:mt-[43px] xl:mr-[1px] lg:mt-[33px] lg:mr-[15px]">
                   <li><Link  className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-black leading-normal' href="/">Home</Link></li>
-                  <li ><Link className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-black leading-normal' href="">How it works</Link></li>
-                  <li ><Link className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-black leading-normal' href="">See it in action</Link></li>
-                  <li ><Link className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-black leading-normal'  href="">Support</Link></li>
-                  <li ><Link className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-black leading-normal'  href="">Contact</Link></li>
+                  <li ><Link className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-black leading-normal' href={"/#how"}>How it works</Link></li>
+                  <li ><Link className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-black leading-normal' href={"/#see"}>See it in action</Link></li>
+                  <li ><Link className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-black leading-normal'  href={"/#support"}>Support</Link></li>
+                  <li ><Link className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-black leading-normal'  href={"/#contact"}>contact</Link></li>
               </ul>
         </div>
         {/********************************** Header end ******************************/}
@@ -42,7 +42,7 @@ const Support = () => {
         </div>
 
         <div>
-        <div id='' className='mt-14'>
+        <div id='support' className='mt-14'>
                 <div className='flex items-center justify-center'>
                     <div className='pt-12'>
                     <section id="faq" className="container w-96">
@@ -59,7 +59,7 @@ const Support = () => {
             </div>
     {/**************************** Ask us anything start **************************************/}
 
-      <div className="bg-[#7A85DE] w-full h-[652px] section-six">
+      <div id='support' className="bg-[#7A85DE] w-full h-[652px] section-six">
           <div className="relative">
             <Image className="absolute 3xl:top-[82px] 2xl:left-0 2xl:top-[82px] xl:top-[62px] xl:left-[9px]  3xl:left-0  xl:w-[308px] 3xl:w-[418px]" src={cloud2} alt=""/>
             <Image className="absolute 3xl:top-[100px] 3xl:left-[1324px] 2xl:top-[100px] 2xl:left-[1224px] xl:top-[100px] xl:left-[1024px]" src={Vector7} alt=""/>
@@ -87,7 +87,7 @@ const Support = () => {
         </div>
         {/**************************** Ask us anything end **************************************/}
 
-        <div className='h-[351px] bg-white'>
+        <div id='connect' className='h-[351px] bg-white'>
         <p className="pt-[89px] text-[var(--dark,#0A142F)] text-center font-medium text-2xl leading-normal">Subscribe for the new updates !</p>
         <div className="flex items-center justify-center pr-[24px] pt-[29px]">
               <div className="w-[546px] h-[74px] bg-[#e8e8fd] rounded-full">
