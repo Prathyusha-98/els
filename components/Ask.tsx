@@ -81,7 +81,7 @@ const Ask = () => {
           <div className="flex items-center justify-center">
             <form action="" method="post" onSubmit={handleSubmit}>
               <div className="pt-12 xs:pt-4">
-                <input onBlur={handleBlur("Full Name")} onFocus={handleFocus} className="p-8 xs:p-5 placeholder:float-left  bg-white border-white rounded-lg 3xl:w-[718px] 2xl:w-[718px] xl:w-[718px] lg:w-[480px] md:w-[430px] sm:w-[430px] xs:w-[282px] xs:h-6 h-14 outline-none" type="text"
+                <input onBlur={handleBlur("Full Name")} onFocus={handleFocus} className="xs:placeholder:text-[14px] xs:placeholder:pt-[2px] p-8 xs:p-5 placeholder:float-left  bg-white border-white rounded-lg 3xl:w-[718px] 2xl:w-[718px] xl:w-[718px] lg:w-[480px] md:w-[430px] sm:w-[430px] xs:w-[282px] xs:h-6 3xl:h-14 2xl:h-14 xl:h-14 lg:h-14 outline-none" type="text"
             name="fullName"
             value={formData.fullName}
             onChange={handleChange}
@@ -89,7 +89,7 @@ const Ask = () => {
             required />
               </div>
               <div className="pt-4 ">
-                <input onBlur={handleBlur("Email")} onFocus={handleFocus} className="p-8 xs:p-5 placeholder:float-left  bg-white border-white rounded-lg 3xl:w-[718px] 2xl:w-[718px] xl:w-[718px] lg:w-[480px] md:w-[430px] sm:w-[430px] xs:w-[282px] xs:h-6 h-14 outline-none"  
+                <input onBlur={handleBlur("Email")} onFocus={handleFocus} className="xs:placeholder:text-[14px] xs:placeholder:pt-[2px] p-8 xs:p-5 placeholder:float-left  bg-white border-white rounded-lg 3xl:w-[718px] 2xl:w-[718px] xl:w-[718px] lg:w-[480px] md:w-[430px] sm:w-[430px] xs:w-[282px] xs:h-6 3xl:h-14 2xl:h-14 xl:h-14 lg:h-14 outline-none"  
             type="email"
             name="email"
             value={formData.email}
@@ -97,7 +97,7 @@ const Ask = () => {
             placeholder="Email" required title="Valid Email Format:example@example.com" />
               </div>
               <div className="pt-4">
-                <input onBlur={handleBlur("Message")} onFocus={handleFocus} className="p-8 placeholder:float-left  bg-white border-white rounded-lg 3xl:w-[718px] 2xl:w-[718px] xl:w-[718px] lg:w-[480px] md:w-[430px] sm:w-[430px] xs:w-[282px] xs:h-[56px] h-36 outline-none"       name="message"
+                <input onBlur={handleBlur("Message")} onFocus={handleFocus} className="xs:placeholder:text-[14px] xs:placeholder:pt-[2px] p-6 placeholder:float-left  bg-white border-white rounded-lg 3xl:w-[718px] 2xl:w-[718px] xl:w-[718px] lg:w-[480px] md:w-[430px] sm:w-[430px] xs:w-[282px] xs:h-[56px] 3xl:h-36 2xl:h-36 xl:h-36 lg:h-36 md:h-36 sm:h-36 outline-none"       name="message"
             value={formData.message}
             onChange={handleChange}
             placeholder="Message"
@@ -121,7 +121,7 @@ const Ask = () => {
                   
                   <div>
                     <form action="" className="flex items-center justify-center">
-                      <input onBlur={handleBlur("Enter your email here *")} onFocus={handleFocus} type="email" className=" bg-[#e8e8fd] border-[#e8e8fd] 3xl:w-[189px] 3xl:h-[26px] 2xl:w-[189px] 2xl:h-[26px] xl:w-[189px] xl:h-[26px] lg:w-[189px] lg:h-[26px] md:w-[189px] md:h-[26px] sm:w-[189px] sm:h-[26px] xs:w-[111px] xs:h-[15px] outline-none" name="Email" placeholder="Enter your email here *" required title="Valid Email Format:example@example.com" />
+                      <input onBlur={handleBlur("Enter your email here *")} onFocus={handleFocus} type="email" className=" bg-[#e8e8fd] border-[#e8e8fd] 3xl:w-[189px] 3xl:h-[26px] 2xl:w-[189px] 2xl:h-[26px] xl:w-[189px] xl:h-[26px] lg:w-[189px] lg:h-[26px] md:w-[189px] md:h-[26px] sm:w-[189px] sm:h-[26px] xs:w-[111px] xs:h-[15px] xs:placeholder:text-[10px] sm:placeholder:text-[16px] md:placeholder:text-[16px] lg:placeholder:text-[16px] xl:placeholder:text-[16px] gl:placeholder:text-[16px] 2xl:placeholder:text-[16px] 3xl:placeholder:text-[16px] outline-none" name="Email" placeholder="Enter your email here *" required title="Valid Email Format:example@example.com" />
                     </form>
                   </div>
                   <div className='3xl:pl-[258px] 2xl:pl-[258px] xl:pl-[258px] lg:pl-[258px] md:pl-[258px] sm:pl-[258px] xs:pl-[120px]'>

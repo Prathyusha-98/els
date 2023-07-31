@@ -57,7 +57,7 @@ function Header () {
           </div>
           <div className="flex w-[202px] h-[62px] justify-center items-center gap-4 flex-shrink-0">
             <div className="flex justify-center items-center">
-              <div><BsFillPlayCircleFill className='w-[62px] h-[62px] fill-white'/></div>
+              <Link href={'#how'}  > <BsFillPlayCircleFill className='sm:w-[59px] sm:h-[59px] md:w-[59px] md:h-[59px] xs:w-[33px] xs:h-[33px] fill-white'/></Link>
               <div className="pl-4">
                 <p className='text-white text-center font-poppins text-xs font-semibold leading-[14px]'>
                   See How it works!
@@ -101,8 +101,8 @@ function Header () {
         <div className='items-center justify-between flex bg-transparent pt-4 px-2 pb-14'>
           <div className='font-bold sm:text-2xl cursor-pointer flex items-center text-white'>
             <Link href="/">
-              <div className='flex items-center md:ml-64 sm:ml-64 xs:ml-24 mt-5'>
-                <h1 className="font-semibold ml-2 md:text-4xl sm:text-4xl xs:text-3xl text-white">Endless Stories</h1>
+              <div className='flex items-center md:ml-64 sm:ml-64 xs:ml-32 mt-7'>
+                <h1 className="font-semibold ml-2 md:text-4xl sm:text-4xl xs:text-xl text-white">Endless Stories</h1>
               </div>
             </Link>
           </div>
@@ -143,7 +143,7 @@ function Header () {
             <div className="flex pt-6 justify-center items-center">
               <div className="flex sm:w-[202px] sm:h-[62px] md:w-[202px] md:h-[62px] xs:w-[146px] xs:h-[45px] justify-center items-center gap-4 flex-shrink-0">
                 <div className="flex justify-center items-center">
-                  <div><BsFillPlayCircleFill className='sm:w-[59px] sm:h-[59px] md:w-[59px] md:h-[59px] xs:w-[33px] xs:h-[33px] fill-white'/></div>
+                  <Link href={"/#how"} > <BsFillPlayCircleFill className='sm:w-[59px] sm:h-[59px] md:w-[59px] md:h-[59px] xs:w-[33px] xs:h-[33px] fill-white'/></Link>
                   <div className="pl-4 xs:pl-2">
                     <p className='text-white text-center font-poppins text-xs xs:text-[10px] font-semibold leading-[14px]'>
                       See How it works!

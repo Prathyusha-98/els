@@ -66,25 +66,27 @@ const Support = () => {
                     <div className='pt-12'>
                     <section id="faq" className="container w-96">
                         <Faq questions={[{ title: 'What is an FAQ section?', text: 'An FAQ section can be used to quickly answer common questions about your business like "Where do you ship to?", "What are your opening hours?", or "How can I book a service?".' },
-                        { title: 'Why do FAQs matter?', text: 'sign-in then try our UNI-play' },
-                        { title: 'Where can I add my FAQs?', text: 'Click on the forget password page which will send an verification email and password regenrate link to your authorized email from there you can reset your password.' },
-                        { title: 'What is an FAQ section?', text: '' },
-                        { title: 'What if i have a query ?', text: 'Click on the contact page and fill out your name email and query and we will be happy to answer to your queries.' }]} />
+                        { title: 'Why do FAQs matter?', text: 'FAQs are a great way to help site visitors find quick answers to common questions about your business and create a better navigation experience.' },
+                        { title: 'Where can I add my FAQs?', text: 'FAQs can be added to any page on your site or to your Wix mobile app, giving access to members on the go.' },
+                        ]} />
                     </section>
                     </div>
                 </div>
           </div>
         </div>
+        <div className='relative bg-[#F8F7FF] lg:flex md:hidden sm:hidden xs:hidden'>
+        <div><Image src={boy} alt='' className='absolute top-[837px]'/></div>
+        </div>
       </div>
 
-
+    {/**************************** Ask us mobile anything start **************************************/}
       <div id='service' className=' bg-[#F8F7FF] lg:hidden md:block sm:block xs:block'>
       <div className='z-50 w-full static'>
         <div className='items-center justify-between flex bg-transparent pt-4 px-2 pb-14'>
           <div className='font-bold sm:text-2xl cursor-pointer flex items-center text-white'>
             <Link href="/">
-              <div className='flex items-center md:ml-64 sm:ml-64 xs:ml-24 mt-5'>
-                <h1 className="font-semibold ml-2 md:text-4xl sm:text-4xl xs:text-3xl text-black">Endless Stories</h1>
+              <div className='flex items-center md:ml-64 sm:ml-64 xs:ml-32 mt-7'>
+                <h1 className="font-semibold ml-2 md:text-4xl sm:text-4xl xs:text-xl text-black">Endless Stories</h1>
               </div>
             </Link>
           </div>
@@ -115,18 +117,18 @@ const Support = () => {
 
         <div className='relative'>
             <div>
-                <Image src={subu} alt='' className='absolute w-[94px] h-[74px] top-[123px] left-[270px] '/>
+                <Image src={subu} alt='' className='absolute w-[94px] h-[74px] top-[123px] xs:left-[280px] sm:left-[560px] md:left-[670px]'/>
             </div>
         </div>
         <div  ><p className='text-4xl text-[#053445] text-center font-semibold'>FAQs</p></div>
 
-        <div className='flex md:pl-56 sm:pl-36 xs:pl-8 lg:pl-56 pl-0'>
+        <div className='flex md:pl-56 sm:pl-36 xs:pl-2 lg:pl-56 pl-0'>
           <div className='pt-12'>
             <section id="faq" className="container w-96">
               <Faq  questions={[{ title: 'What is an FAQ section?', text: 'An FAQ section can be used to quickly answer common questions about your business like "Where do you ship to?", "What are your opening hours?", or "How can I book a service?".' },
                 { title: 'Why do FAQs matter?', text: 'sign-in then try our UNI-play' },
                 { title: 'Where can I add my FAQs?', text: 'Click on the forget password page which will send an verification email and password regenrate link to your authorized email from there you can reset your password.' },
-                { title: 'What is an FAQ section?', text: '' },
+                { title: 'What is an FAQ section?', text: 'Click on the forget password page which will send an verification email and password regenrate link to your authorized email from there you can reset your password.' },
                 { title: 'What if i have a query ?', text: 'Click on the contact page and fill out your name email and query and we will be happy to answer to your queries.' }]} />
             </section>
           </div>

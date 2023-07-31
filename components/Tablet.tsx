@@ -21,7 +21,7 @@ const Tablet =() =>{
   <div className="flex justify-center items-center">
     <div>
       <div className="">
-        <p className="text-[#2A2E36] text-center font-poppins 3xl:text-6xl 2xl:text-5xl xl:text-4xl lg:text-3xl font-extrabold leading-[95px] pt-44 lg:pt-72">Try Endless Stories <br />for Free!</p>
+        <p className="text-[#2A2E36] text-center font-poppins 3xl:text-6xl 2xl:text-5xl xl:text-4xl lg:text-3xl font-extrabold leading-[95px] pt-44 2xl:pt-24 lg:pt-72">Try Endless Stories <br />for Free!</p>
       </div>
       <div className="">
         <p className="text-[#525D73] text-center font-poppins 3xl:text-lg 2xl:text-base xl:text-sm lg:text-xs font-normal leading-[30px]">
