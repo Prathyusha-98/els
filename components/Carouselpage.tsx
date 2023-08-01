@@ -36,7 +36,7 @@ const Caruselpage = () => {
     dots: false,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 3000,
     slidesToShow: 1,
     slidesToScroll: 1,
     customPaging: (i: number) => (

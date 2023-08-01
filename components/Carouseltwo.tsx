@@ -16,19 +16,19 @@ const Carouseltwo = () => {
     superLargeDesktop: {
       // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
-      items: 1
+      items: 1,
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 1
+      items: 1,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 1
+      items: 1,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 1
+      items: 1,
     }
   };
   return (
@@ -48,7 +48,15 @@ const Carouseltwo = () => {
           <p className=" text-white text-center font-poppins 3xl:text-5xl 2xl:text-5xl xl:text-4xl lg:text-3xl md:text-4xl sm:text-4xl xs:text-lg font-semibold leading-normal my-auto 3xl:pt-12 2xl:pt-12 xl:pt-12 lg:pt-12 md:pt-36">What Parents and Teachers Say <br/>About Endless Stories</p>
         </div>
         <div>
-              <Carousel responsive={responsive}>
+              <Carousel  
+  responsive={responsive}
+  infinite={true}
+  autoPlay={true}
+  autoPlaySpeed={500}
+  keyBoardControl={true}
+  customTransition="all .5"
+  transitionDuration={500}
+>
                 <div>
                   <div className='flex items-center justify-center pt-[46px]  xs:pt-[35px]'>
                   <div className="3xl:w-[932px] 3xl:h-[390px] 2xl:w-[932px] 2xl:h-[395px] xl:w-[932px] xl:h-[192px] lg:w-[932px] lg:h-[192px] px-28">
@@ -67,7 +75,7 @@ const Carouseltwo = () => {
                 </div>
                 <div>
                   <div className='flex items-center justify-center pt-[46px] xs:pt-[37px]'>
-                  <div className="3xl:w-[932px] 3xl:h-[390px] 2xl:w-[932px] 2xl:h-[285px] xl:w-[932px] xl:h-[285px] lg:w-[632px] lg:h-[192px]  px-28">
+                  <div className="3xl:w-[932px] 3xl:h-[390px] 2xl:w-[932px] 2xl:h-[285px] xl:w-[632px] xl:h-[285px] lg:w-[632px] lg:h-[192px]  px-28">
                     <p className="text-[#EDFBFF] pt-8 text-center font-poppins 3xl:text-4xl 2xl:text-4xl xl:text-2xl lg:text-2xl md:text-2xl sm:text-2xl xs:text-xs font-normal leading-normal">“Endless Stories is fun. My daughter loves using it every day!”</p>
                     <p  className="text-[#1C2F70] text-center font-poppins 3xl:text-3xl 2xl:text-3xl xl:text-3xl lg:text-3xl md:text-2xl sm:text-2xl pt-24 font-medium leading-normal">Amy, Parent</p>
                   </div>
