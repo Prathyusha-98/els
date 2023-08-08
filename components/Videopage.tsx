@@ -50,26 +50,29 @@ export default function Home() {
           <Image className="absolute 3xl:top-[857px] 3xl:left-[1058px] 3xl:w-[163px] 3xl:h-[104px] 2xl:top-[857px] 2xl:left-[943.01px] 2xl:w-[153px] 2xl:h-[93px] xl:top-[580px] xl:left-[743px] xl:w-[75px] xl:h-[48px] lg:top-[480px] lg:left-[643px] lg:w-[75px] lg:h-[48px]" src={book} alt=""/>
           <Image className="absolute 3xl:top-[643px] 3xl:left-[83.01px] 2xl:top-[693px] 2xl:left-[103.01px] 2xl:w-[253px] xl:top-[303px] xl:left-[93.01px] xl:w-[243px] lg:top-[343px] lg:left-[43.01px] lg:w-[203px] " src={butterfly} alt=""/>
       </div>  
-      <div className='flex items-center justify-center pb-4 z-50'>
+      <div className="flex items-center justify-center pb-4 z-50 relative">
   {[1, 2, 3, 4].map((num, index) => (
-    <div key={num} className='pl-28 relative'>
+    <div key={num} className="pl-28 z-50 ">
       <button
         key={num}
         onClick={() => setStep(num - 1)}
         className={
           num === step + 1
-            ? "z-50 w-14 h-14 rounded-full lg:w-12 lg:h-12 bg-[#6470D7] text-white font-bold lg:text-sm text-lg border-solid border-[8px] border-indigo-300"
+            ? " w-14 h-14 rounded-full lg:w-12 lg:h-12 bg-[#6470D7] text-white font-bold lg:text-sm text-lg border-solid border-[8px] border-indigo-300"
             : num < step + 1
-            ? "z-50 w-8 h-8 rounded-full bg-[#6470D7] text-white font-bold text-lg"
-            : "z-50 w-8 h-8 rounded-full bg-[#DBDBDB] text-white font-bold text-lg"
+            ? " w-8 h-8 rounded-full bg-[#6470D7] text-white font-bold text-lg"
+            : " w-8 h-8 rounded-full bg-[#DBDBDB] text-white font-bold text-lg"
         }
       >
         {num}
-
       </button>
     </div>
   ))}
+  <div className={`absolute top-[] left-[480px] right-[360px] h-1 ${
+          step - 0 ? 'bg-[#6470D7]' : 'bg-[#DBDBDB]'
+        }`}></div>
 </div>
+
       <div className="flex justify-center items-center  ">
       <Image
           className='z-50 rounded-3xl border-4 border-solid border-black 3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[185px] xl:h-[336px] lg:w-[155px] lg:h-[296px]'
