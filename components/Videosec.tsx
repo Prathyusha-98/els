@@ -75,9 +75,8 @@ const Videosec = ()=>{
         <div className="relative mt-[67px] sm:pt-[47px]">
             <div>
             <video
-                ref={videoRef}
-                onClick={handlePlayPause} className='md:w-[583px] md:h-[559px] sm:w-[531px] sm:h-[529px]  xs:w-[300px] xs:h-[298px]  ' >
-                <source src="/kin.mp4" type="video/mp4" />
+                controls className='md:w-[583px] md:h-[559px] sm:w-[531px] sm:h-[529px]  xs:w-[300px] xs:h-[298px]  ' >
+                <source src="/file.mp4" type="video/mp4" />
               </video>
               <button className="absolute md:top-[300px] md:left-[280px] sm:top-[280px] sm:left-[250px]  xs:top-[140px] xs:left-[160px] lg:top-[280px] lg:left-[220px] transform -translate-x-1/2 -translate-y-1/2" onClick={handlePlayPause}>
                 {isPlaying ? '' : <BsPlayCircleFill className='w-24 h-24 fill-white'/>}

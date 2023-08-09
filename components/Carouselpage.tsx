@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -19,6 +19,7 @@ import butterfly from "@/assets/butterfly.png"
 import wave from "@/assets/wave.png"
 import mobilewave from '@/assets/mobilewave.png'
 import cloudmob from '@/assets/cloudmob.png'
+
 const Caruselpage = () => {
   const carouselItems = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
 
@@ -35,7 +36,7 @@ const Caruselpage = () => {
     dots: false,
     infinite: true,
     autoplay: true,
-    speed: 500,
+    autoplaySpeed: 3000,
     slidesToShow: 1,
     slidesToScroll: 1,
     customPaging: (i: number) => (
@@ -53,7 +54,7 @@ const Caruselpage = () => {
     ),
     beforeChange: (oldIndex: any, newIndex: React.SetStateAction<number>) => setCurrentSlide(newIndex),
   };
-
+  const sliderRef = useRef<Slider>(null);
   
 
   return (
@@ -71,7 +72,7 @@ const Caruselpage = () => {
       </div>  
 
       <div className="flex justify-center items-center 3xl:mt-24 2xl:mt-24 ">
-  {carouselItems.map((item, index) => (
+  {carouselItems.map((_, index) => (
     <>
       <span
         key={index}
@@ -84,6 +85,7 @@ const Caruselpage = () => {
             ? "w-8 h-8 bg-[#6470D7] text-white font-bold text-lg"
             : "w-8 h-8 bg-[#DBDBDB] text-white font-bold text-lg"
         }`}
+        onClick={() => sliderRef.current?.slickGoTo(index)}
       >
         {index + 1}
 
@@ -103,104 +105,112 @@ const Caruselpage = () => {
 </div>
 
       <div className="">
-      <Slider {...settings}>
-          {/* Your carousel slides here */}
-          <div>
-          <div className="flex justify-center items-center pt-20 lg:pt-8 ">
-            <div className="3xl:pl-52 2xl:pl-52 xl:pl-14">
-              <Image className='rounded-3xl border-4 border-solid border-black 3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[185px] xl:h-[336px] lg:w-[155px] lg:h-[296px]' src={Step} alt="" />
-            </div>
-            <div className="2xl:mt-[420px] 3xl:mt-[340px] xl:mt-[160px] lg:mt-[160px]">
-              <Image className="xl:w-[147px] xl:h-[110px] lg:w-[147px] lg:h-[110px] 2xl:w-[300px] 2xl:h-[227px] 3xl:w-[320px] 3xl:h-[237px]" src={girl1} alt=""/>
-            </div>
-            <div className="pl-[31px] xl:pb-24 ">
-              <div className="3xl:w-[645px] 3xl:h-[223px] 2xl:w-[545px] 2xl:h-[193px] xl:w-[477px] xl:h-[166px] lg:w-[377px] lg:h-[126px] flex-shrink-0 rounded-lg bg-[#FCFCFC]">
-                <div className="3xl:pt-[65px] 2xl:pt-[65px] xl:pt-[48px] lg:pt-[36px] flex items-center justify-center">
-                  <div className="w-[62px] h-[62px] rounded-full bg-[#D68294]">
-                    <p className="text-white 3xl:text-4xl 2xl:text-3xl xl:text-2xl lg:text-xl font-extrabold flex items-center justify-center pt-3.5">1</p>
-                  </div>
-                  <div className="pl-6">
-                    <p className="text-[#2A2E36] 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold">Start your adventure</p>
-                    <p className="text-[#2A2E36] 3xl:text-2xl 2xl:text-xl xl:text-lg font-normal">Speak out your story idea or plot</p>
+      <Slider {...settings} ref={sliderRef}>
+        {carouselItems.map((_, index) => (
+          <div key={index} >
+            {/* Render your slide content here */}
+            {/* For example: */}
+            {index === 0 && (
+            <div>
+                <div className="flex justify-center items-center pt-20 lg:pt-8 ">
+                <div className="3xl:pl-52 2xl:pl-52 xl:pl-14">
+                  <Image className='rounded-3xl border-4 border-solid border-black 3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[185px] xl:h-[336px] lg:w-[155px] lg:h-[296px]' src={Step} alt="" />
+                </div>
+                <div className="2xl:mt-[420px] 3xl:mt-[340px] xl:mt-[160px] lg:mt-[160px]">
+                  <Image className="xl:w-[147px] xl:h-[110px] lg:w-[147px] lg:h-[110px] 2xl:w-[300px] 2xl:h-[227px] 3xl:w-[320px] 3xl:h-[237px]" src={girl1} alt=""/>
+                </div>
+                <div className="pl-[31px] xl:pb-24 ">
+                  <div className="3xl:w-[645px] 3xl:h-[223px] 2xl:w-[545px] 2xl:h-[193px] xl:w-[477px] xl:h-[166px] lg:w-[377px] lg:h-[126px] flex-shrink-0 rounded-lg bg-[#FCFCFC]">
+                    <div className="3xl:pt-[65px] 2xl:pt-[65px] xl:pt-[48px] lg:pt-[36px] flex items-center justify-center">
+                      <div className="w-[62px] h-[62px] rounded-full bg-[#D68294]">
+                        <p className="text-white 3xl:text-4xl 2xl:text-3xl xl:text-2xl lg:text-xl font-extrabold flex items-center justify-center pt-3.5">1</p>
+                      </div>
+                      <div className="pl-6">
+                        <p className="text-[#2A2E36] 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold">Start your adventure</p>
+                        <p className="text-[#2A2E36] 3xl:text-2xl 2xl:text-xl xl:text-lg font-normal">Speak out your story idea or plot</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          </div>
-          <div>
-          <div className="flex justify-center items-center pt-20">
-            <div className="2xl:pl-36 3xl:pl-56 xl:pl-28">
-            <Image className='rounded-3xl border-4 border-solid border-black 3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[185px] xl:h-[336px] lg:w-[120px] lg:h-[236px] mb-14' src={Step2} alt="" />            </div>
-            <div className="xl:mt-[80px] 2xl:mt-[380px] 3xl:mt-[380px] lg:mt-[60px]">
-              <Image className="xl:w-[171px] xl:h-[96px] lg:w-[167px] lg:h-[96px] 2xl:w-[250px] 2xl:h-[137px] 3xl:w-[355px] 3xl:h-[197px]" src={boy1} alt=""/>
-            </div>
-            <div className="pl-[31px] xl:pb-24 lg:pb-24 ">
-              <div className="3xl:w-[645px] 3xl:h-[223px] 2xl:w-[545px] 2xl:h-[193px] xl:w-[477px] xl:h-[166px] lg:w-[377px] lg:h-[126px] flex-shrink-0 rounded-lg bg-[#FCFCFC]">
-                <div className="3xl:pt-[65px] 2xl:pt-[65px] xl:pt-[25px] lg:pt-[36px] flex items-center justify-center">
-                  <div className="w-[62px] h-[62px] rounded-full bg-[#DE976F]">
-                    <p className="text-white 3xl:text-4xl 2xl:text-3xl xl:text-2xl lg:text-xl font-extrabold flex items-center justify-center pt-3.5">2</p>
-                  </div>
-                  <div className="pl-6">
-                    <p className="text-[#2A2E36] 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold">Pick your picture</p>
-                    <p className="text-[#2A2E36] 3xl:text-2xl 2xl:text-xl xl:text-lg font-normal">Sit back and listen as the story <br /> unfolds</p>
+            )}
+            {index === 1 && (
+              <div>
+              <div className="flex justify-center items-center pt-20">
+                <div className="2xl:pl-36 3xl:pl-56 xl:pl-28">
+                <Image className='rounded-3xl border-4 border-solid border-black 3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[185px] xl:h-[336px] lg:w-[120px] lg:h-[236px] mb-14' src={Step2} alt="" />            </div>
+                <div className="xl:mt-[80px] 2xl:mt-[380px] 3xl:mt-[380px] lg:mt-[60px]">
+                  <Image className="xl:w-[171px] xl:h-[96px] lg:w-[167px] lg:h-[96px] 2xl:w-[250px] 2xl:h-[137px] 3xl:w-[355px] 3xl:h-[197px]" src={boy1} alt=""/>
+                </div>
+                <div className="pl-[31px] xl:pb-24 lg:pb-24 ">
+                  <div className="3xl:w-[645px] 3xl:h-[223px] 2xl:w-[545px] 2xl:h-[193px] xl:w-[477px] xl:h-[166px] lg:w-[377px] lg:h-[126px] flex-shrink-0 rounded-lg bg-[#FCFCFC]">
+                    <div className="3xl:pt-[65px] 2xl:pt-[65px] xl:pt-[25px] lg:pt-[36px] flex items-center justify-center">
+                      <div className="w-[62px] h-[62px] rounded-full bg-[#DE976F]">
+                        <p className="text-white 3xl:text-4xl 2xl:text-3xl xl:text-2xl lg:text-xl font-extrabold flex items-center justify-center pt-3.5">2</p>
+                      </div>
+                      <div className="pl-6">
+                        <p className="text-[#2A2E36] 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold">Pick your picture</p>
+                        <p className="text-[#2A2E36] 3xl:text-2xl 2xl:text-xl xl:text-lg font-normal">Sit back and listen as the story <br /> unfolds</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          </div>
-
-
-          <div>
-          <div className="flex justify-center items-center pt-20">
-            <div className="3xl:pl-56 2xl:pl-56 xl:pl-28">
-            <Image className='rounded-3xl border-4 border-solid border-black 3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[185px] xl:h-[336px] lg:w-[120px] lg:h-[236px] mb-14' src={phone} alt="" />            </div>
-            <div className="xl:mt-[80px] 2xl:mt-[380px] 3xl:mt-[380px] lg:mt-[100px]">
-              <Image className="xl:w-[154px] xl:h-[124px] lg:w-[134px] lg:h-[104px] 2xl:w-[219px] 2xl:h-[174px] 3xl:w-[319px] 3xl:h-[225px]" src={girl} alt=""/>
-            </div>
-            <div className="pl-[31px] xl:pb-24 lg:pb-24 ">
-              <div className="3xl:w-[645px] 3xl:h-[223px] 2xl:w-[545px] 2xl:h-[193px] xl:w-[477px] xl:h-[166px] lg:w-[377px] lg:h-[126px] flex-shrink-0 rounded-lg bg-[#FCFCFC]">
-                <div className="3xl:pt-[65px] 2xl:pt-[65px] xl:pt-[25px] lg:pt-[36px] flex items-center justify-center">
-                  <div className="w-[62px] h-[62px] rounded-full bg-[#7AA0CD]">
-                    <p  className="text-white 3xl:text-4xl 2xl:text-3xl xl:text-2xl lg:text-xl font-extrabold flex items-center justify-center pt-3.5">3</p>
-                  </div>
-                  <div className="pl-6">
-                    <p className="text-[#2A2E36] 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold">​Enjoy the tale</p>
-                    <p className="text-[#2A2E36] 3xl:text-2xl 2xl:text-xl xl:text-lg font-normal">Sit back and listen as the story <br /> unfolds</p>
+              </div>
+            )}
+            {index === 2 && (
+              <div>
+              <div className="flex justify-center items-center pt-20">
+                <div className="3xl:pl-56 2xl:pl-56 xl:pl-28">
+                <Image className='rounded-3xl border-4 border-solid border-black 3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[185px] xl:h-[336px] lg:w-[120px] lg:h-[236px] mb-14' src={phone} alt="" />            </div>
+                <div className="xl:mt-[80px] 2xl:mt-[380px] 3xl:mt-[380px] lg:mt-[100px]">
+                  <Image className="xl:w-[154px] xl:h-[124px] lg:w-[134px] lg:h-[104px] 2xl:w-[219px] 2xl:h-[174px] 3xl:w-[319px] 3xl:h-[225px]" src={girl} alt=""/>
+                </div>
+                <div className="pl-[31px] xl:pb-24 lg:pb-24 ">
+                  <div className="3xl:w-[645px] 3xl:h-[223px] 2xl:w-[545px] 2xl:h-[193px] xl:w-[477px] xl:h-[166px] lg:w-[377px] lg:h-[126px] flex-shrink-0 rounded-lg bg-[#FCFCFC]">
+                    <div className="3xl:pt-[65px] 2xl:pt-[65px] xl:pt-[25px] lg:pt-[36px] flex items-center justify-center">
+                      <div className="w-[62px] h-[62px] rounded-full bg-[#7AA0CD]">
+                        <p  className="text-white 3xl:text-4xl 2xl:text-3xl xl:text-2xl lg:text-xl font-extrabold flex items-center justify-center pt-3.5">3</p>
+                      </div>
+                      <div className="pl-6">
+                        <p className="text-[#2A2E36] 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold">​Enjoy the tale</p>
+                        <p className="text-[#2A2E36] 3xl:text-2xl 2xl:text-xl xl:text-lg font-normal">Sit back and listen as the story <br /> unfolds</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          </div>
-
-
-          <div>
-          <div  className="flex justify-center items-center pt-20">
-            <div className="3xl:pl-56 2xl:pl-36 xl:pl-28">
-            <Image className='rounded-3xl border-4 border-solid border-black 3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[185px] xl:h-[336px] lg:w-[120px] lg:h-[236px] mb-14' src={Step4} alt="" />            </div>
-            <div className="xl:mt-[80px] 2xl:mt-[380px] 3xl:mt-[380px] lg:mt-[90px]">
-              <Image className="xl:w-[114px] xl-[154px] lg:w-[104px] lg:h-[134px] 2xl:w-[150px] 2xl:h-[200px] 3xl:w-[188px] 3xl:h-[253px]" src={boy} alt=""/>
-            </div>
-            <div className="pl-[100px] xl:pb-24 lg:pb-24 ">
-              <div className="3xl:w-[645px] 3xl:h-[223px] 2xl:w-[545px] 2xl:h-[193px] xl:w-[477px] xl:h-[166px] lg:w-[377px] lg:h-[126px] flex-shrink-0 rounded-lg bg-[#FCFCFC]">
-                <div className="3xl:pt-[65px] 2xl:pt-[65px] xl:pt-[25px] lg:pt-[36px] flex items-center justify-center">
-                  <div className="w-[62px] h-[62px] rounded-full bg-[#98D575]">
-                    <p className="text-white 3xl:text-4xl 2xl:text-3xl xl:text-2xl lg:text-xl font-extrabold flex items-center justify-center pt-3.5">4</p>
-                  </div>
-                  <div className="pl-6">
-                    <p className="text-[#2A2E36] 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold">Keep the magic alive</p>
-                    <p className="text-[#2A2E36] 3xl:text-2xl 2xl:text-xl xl:text-lg font-normal">Add another page to continue <br />your story</p>
+              </div>
+            )}
+            {index === 3 && (
+              <div>
+              <div  className="flex justify-center items-center pt-20">
+                <div className="3xl:pl-56 2xl:pl-36 xl:pl-28">
+                <Image className='rounded-3xl border-4 border-solid border-black 3xl:w-[280px] 3xl:h-[517px] 2xl:w-[280px] 2xl:h-[517px] xl:w-[185px] xl:h-[336px] lg:w-[120px] lg:h-[236px] mb-14' src={Step4} alt="" />            </div>
+                <div className="xl:mt-[80px] 2xl:mt-[380px] 3xl:mt-[380px] lg:mt-[90px]">
+                  <Image className="xl:w-[114px] xl-[154px] lg:w-[104px] lg:h-[134px] 2xl:w-[150px] 2xl:h-[200px] 3xl:w-[188px] 3xl:h-[253px]" src={boy} alt=""/>
+                </div>
+                <div className="pl-[100px] xl:pb-24 lg:pb-24 ">
+                  <div className="3xl:w-[645px] 3xl:h-[223px] 2xl:w-[545px] 2xl:h-[193px] xl:w-[477px] xl:h-[166px] lg:w-[377px] lg:h-[126px] flex-shrink-0 rounded-lg bg-[#FCFCFC]">
+                    <div className="3xl:pt-[65px] 2xl:pt-[65px] xl:pt-[25px] lg:pt-[36px] flex items-center justify-center">
+                      <div className="w-[62px] h-[62px] rounded-full bg-[#98D575]">
+                        <p className="text-white 3xl:text-4xl 2xl:text-3xl xl:text-2xl lg:text-xl font-extrabold flex items-center justify-center pt-3.5">4</p>
+                      </div>
+                      <div className="pl-6">
+                        <p className="text-[#2A2E36] 3xl:text-4xl 2xl:text-3xl xl:text-2xl font-extrabold">Keep the magic alive</p>
+                        <p className="text-[#2A2E36] 3xl:text-2xl 2xl:text-xl xl:text-lg font-normal">Add another page to continue <br />your story</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+              </div>
+            )}
+            {/* Add more conditions for other slides */}
           </div>
-          </div>
-
-          {/* Add more slides as needed */}
-        </Slider>
+        ))}
+      </Slider>
       </div>
     </div>
 

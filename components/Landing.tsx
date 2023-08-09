@@ -61,6 +61,8 @@ import Commingsoon from './Commingsoon';
 import Videosec from './Videosec';
 import Cards from './Cards';
 import Tablet from './Tablet';
+import Videopage from './Videopage';
+import Carouselpage from './Carouselpage';
 const Landing = () => {
 
 
@@ -93,7 +95,8 @@ const Landing = () => {
   return (
     <div className='bg-uni'>
       <Header />
-      <Caruselpage />
+      <Videopage />
+      <div className='lg:hidden sm:block xs:block md:block' ><Carouselpage/></div>
       <Commingsoon />
       <Videosec />
       <Carouseltwo />

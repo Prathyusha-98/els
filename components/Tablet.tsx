@@ -6,6 +6,7 @@ import fox from "@/assets/fox.png"
 import apple from "@/assets/apple.png"
 import tri from '@/assets/tri.png';
 import Image from 'next/image';
+import tab from "@/assets/tab.png"
 const Tablet =() =>{
     return(
         <>
@@ -58,7 +59,9 @@ const Tablet =() =>{
       </div>
     </div>
     <div className="2xl:pl-[328px] 3xl:pl-[318px] xl:pl-[130px] lg:pl-[100px] pt-[50px]">
-      <div className="rounded-3xl 3xl:w-[498px] 3xl:h-[637px] 2xl:w-[478px] 2xl:h-[637px] xl:w-[410px] xl:h-[537px] lg:w-[410px] lg:h-[537px] border-[22px] border-solid border-black bg-[#c5c8ca]"></div>
+      <div className="rounded-3xl 3xl:w-[498px] 3xl:h-[637px] 2xl:w-[478px] 2xl:h-[637px] xl:w-[410px] xl:h-[537px] lg:w-[410px] lg:h-[537px] ">
+        <Image src={tab} alt='' />
+      </div>
     </div>
   </div>
 </div>
@@ -89,7 +92,9 @@ const Tablet =() =>{
         </p>
       </div>
       <div className="flex justify-center items-center md:pt-14 sm:pt-20 xs:pt-20" >
-        <div className="rounded-3xl md:w-[480px] md:h-[612px] sm:w-[380px] sm:h-[512px] xs:w-[212px] xs:h-[288px] xs:border-[10px] xs:border-solid xs:border-black border-[22px] border-solid border-black bg-[#c5c8ca]"></div>
+        <div className="rounded-3xl md:w-[480px] md:h-[612px] sm:w-[380px] sm:h-[512px] xs:w-[212px] xs:h-[288px]">
+          <Image src={tab} alt='' />
+        </div>
       </div>
 
       <div className='flex items-center justify-center md:pt-8 sm:pt-10 xs:pt-6'>
