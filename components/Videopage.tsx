@@ -45,13 +45,8 @@ export default function Home() {
 
       <div className="relative  ">
           <Image src={cloud} className=" xl:h-[190px] 2xl:h-[210px] w-full" alt=""/>
-<<<<<<< HEAD
           <div id='how' className="flex items-center justify-center"> <p className="absolute 3xl:top-14 2xl:top-16 xl:top-10  lg:top-10 items-center text-black 3xl:text-7xl 2xl:text-6xl xl:text-5xl lg:text-4xl font-bold leading-normal;">How it works</p></div>
           <Image src={wave} className="absolute w-full 3xl:top-[757px] 3xl:left-0 2xl:top-[907px] 2xl:left-0 2xl:h-[214px] xl:top-[523px] xl:left-0 xl:h-[193px] lg:top-[423px] lg:left-0 lg:h-[193px]" alt="" />
-=======
-          <div id='how' className="flex items-center justify-center"> <p className="absolute 3xl:top-14 2xl:top-36 xl:top-10  lg:top-10 items-center text-black 3xl:text-7xl 2xl:text-6xl xl:text-5xl lg:text-4xl font-bold leading-normal;">How it works</p></div>
-          <Image src={wave} className="absolute w-full 3xl:top-[757px] 3xl:left-0 2xl:top-[807px] 2xl:left-0 2xl:h-[214px] xl:top-[523px] xl:left-0 xl:h-[193px] lg:top-[423px] lg:left-0 lg:h-[193px]" alt="" />
->>>>>>> 46e8d3ad6fb639b9f1c663e6c9de558e7dbd090d
           <Image className="absolute 3xl:top-[857px] 3xl:left-[1058px] 3xl:w-[163px] 3xl:h-[104px] 2xl:top-[857px] 2xl:left-[943.01px] 2xl:w-[153px] 2xl:h-[93px] xl:top-[580px] xl:left-[743px] xl:w-[75px] xl:h-[48px] lg:top-[480px] lg:left-[643px] lg:w-[75px] lg:h-[48px]" src={book} alt=""/>
           <Image className="absolute 3xl:top-[643px] 3xl:left-[83.01px] 2xl:top-[693px] 2xl:left-[103.01px] 2xl:w-[253px] xl:top-[303px] xl:left-[93.01px] xl:w-[243px] lg:top-[343px] lg:left-[43.01px] lg:w-[203px] " src={butterfly} alt=""/>
       </div>  
@@ -73,11 +68,7 @@ export default function Home() {
       </button>
     </div>
   ))}
-<<<<<<< HEAD
   <div className={`absolute top-[] xl:left-[480px] xl:right-[360px] 2xl:left-[590px] 2xl:right-[480px] 3xl:left-[680px] 3xl:right-[590px] gl:left-[580px] gl:right-[460px] lg:left-[340px] lg:right-[240px] h-1 ${
-=======
-  <div className={`absolute top-[] left-[480px] right-[360px] h-1 ${
->>>>>>> 46e8d3ad6fb639b9f1c663e6c9de558e7dbd090d
           step - 0 ? 'bg-[#6470D7]' : 'bg-[#DBDBDB]'
         }`}></div>
 </div>

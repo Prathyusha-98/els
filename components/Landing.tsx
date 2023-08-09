@@ -62,10 +62,7 @@ import Videosec from './Videosec';
 import Cards from './Cards';
 import Tablet from './Tablet';
 import Videopage from './Videopage';
-<<<<<<< HEAD
 import Carouselpage from './Carouselpage';
-=======
->>>>>>> 46e8d3ad6fb639b9f1c663e6c9de558e7dbd090d
 const Landing = () => {
 
 
@@ -99,10 +96,7 @@ const Landing = () => {
     <div className='bg-uni'>
       <Header />
       <Videopage />
-<<<<<<< HEAD
       <div className='lg:hidden sm:block xs:block md:block' ><Carouselpage/></div>
-=======
->>>>>>> 46e8d3ad6fb639b9f1c663e6c9de558e7dbd090d
       <Commingsoon />
       <Videosec />
       <Carouseltwo />
