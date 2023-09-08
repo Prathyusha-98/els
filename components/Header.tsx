@@ -8,7 +8,7 @@ import apple from "@/assets/apple.png"
 import Stars from './Stars';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import boygroup from '@/assets/boygroup.png'
-
+import logo from '@/assets/logo.svg'
 function Header () {
   const [openmenu, setOpenmenu] = useState(false);
 
@@ -73,9 +73,11 @@ function Header () {
         </div>
           {/***********************************  Header start for screen size >768px ********************************** */}
           <div className="lg:flex absolute top-0 md:hidden">
-                    <p className="text-white text-center text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl font-normal leading-normal 3xl:mt-[53px] 3xl:mr-[513px] 3xl:ml-[126px]  2xl:mt-[53px] 2xl:mr-[413px] 2xl:ml-[126px] xl:mt-[43px] xl:mr-[370px] xl:ml-[66px] lg:mt-[33px] lg:mr-[270px] lg:ml-[66px] gl:mr-[570px]" >Endless Stories</p>
-                
-                <ul className="flex 3xl:mt-[63px] 3xl:mr-[15px] 2xl:mt-[63px] 2xl:mr-[100px] xl:mt-[43px] xl:mr-[1px] lg:mt-[33px] lg:mr-[15px] ">
+              <div className="flex items-center"> {/* Add a containing div for the logo and text */}
+              <Image src={logo} alt="Logo" className="h-6 w-6 md:h-10 md:w-10 lg:h-12 lg:w-12 xl:h-12 xl:w-12 2xl:h-20 2xl:w-20 xl:mr-3 2xl:mr-3 3xl:mr-3 3xl:mt-[53px] 3xl:ml-[126px] 2xl:mt-[53px] 2xl:ml-[126px] xl:mt-[43px] xl:ml-[66px] lg:mt-[33px] lg:ml-[66px]" />
+              <p className="text-white text-center text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl font-normal leading-normal 3xl:mt-[53px] 3xl:mr-[503px] 2xl:mt-[53px] 2xl:mr-[413px] xl:mt-[43px] xl:mr-[340px] lg:mt-[33px] lg:mr-[270px] gl:mr-[570px]" >Endless Stories</p>
+              </div>
+                <ul className="flex 3xl:mt-[63px] 3xl:mr-[15px] 2xl:mt-[63px] 2xl:mr-[100px] xl:mt-[53px] xl:mr-[1px] lg:mt-[33px] lg:mr-[15px] ">
                     <li><Link  className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-white leading-normal' href="/">Home</Link></li>
                     <li ><Link className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-white leading-normal' href={"/#how"}>How it works</Link></li>
                     <li ><Link className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-white leading-normal' href={"/#see"}>See it in action</Link></li>
@@ -101,9 +103,10 @@ function Header () {
         <div className='items-center justify-between flex bg-transparent pt-4 px-2 pb-14'>
           <div className='font-bold sm:text-2xl cursor-pointer flex items-center text-white'>
             <Link href="/">
-              <div className='flex items-center md:ml-64 sm:ml-64 xs:ml-32 mt-7'>
-                <h1 className="font-semibold ml-2 md:text-4xl sm:text-4xl xs:text-xl text-white">Endless Stories</h1>
-              </div>
+            <div className='flex items-center md:ml-64 sm:ml-64 xs:ml-32 mt-7'>
+              <Image src={logo} alt="Logo" className="mr-2 md:w-9 md:h-9 sm:w-8 sm:h-8 xs:w-6 xs:h-6 "  /> {/* Replace 'logo.png' with your actual logo image */}
+              <h1 className="font-semibold ml-2 md:text-4xl sm:text-4xl xs:text-xl text-white">Endless Stories</h1>
+            </div>
             </Link>
           </div>
           <div onClick={() => setOpenmenu(!openmenu)} className='text-3xl absolute  pl-8 top-10 cursor-pointer'>

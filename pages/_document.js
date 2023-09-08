@@ -6,6 +6,7 @@ class MyDocument extends Document {
       <Html>
         <Head>
           {/* Add the Google Fonts link here */}
+          <link rel="icon" href="/assets/logo.svg" /> 
           <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
         </Head>
         <body>
