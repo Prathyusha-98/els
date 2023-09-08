@@ -6,7 +6,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
     <Head>
       <title>
-        Simple AI
+        endless stories
       </title>
       <link rel="shortcut icon" href="/favicon" />
     </Head>
