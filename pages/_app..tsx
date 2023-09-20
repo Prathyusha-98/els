@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <title>
         endless stories
       </title>
-      <link rel="shortcut icon" href="/favicon.ico" style={{borderRadius: '100%'}} />
+      <link rel="shortcut icon" href="/favicon" style={{borderRadius: '100%'}} />
     </Head>
     <Component {...pageProps} />
     </>
