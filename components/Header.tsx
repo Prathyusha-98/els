@@ -8,7 +8,7 @@ import apple from "@/assets/apple.png"
 import Stars from './Stars';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import boygroup from '@/assets/boygroup.png'
-import logo from '@/assets/logo.svg'
+import logo from '@/assets/logo.png'
 function Header () {
   const [openmenu, setOpenmenu] = useState(false);
 
@@ -74,7 +74,7 @@ function Header () {
           {/***********************************  Header start for screen size >768px ********************************** */}
           <div className="lg:flex absolute top-0 md:hidden">
               <div className="flex items-center"> {/* Add a containing div for the logo and text */}
-              <Image src={logo} alt="Logo" className="h-6 w-6 md:h-10 md:w-10 lg:h-12 lg:w-12 xl:h-12 xl:w-12 2xl:h-20 2xl:w-20 xl:mr-3 2xl:mr-3 3xl:mr-3 3xl:mt-[53px] 3xl:ml-[126px] 2xl:mt-[53px] 2xl:ml-[126px] xl:mt-[43px] xl:ml-[66px] lg:mt-[33px] lg:ml-[66px]" />
+              <Image src={logo} alt="Logo" className="rounded-full h-6 w-6 md:h-10 md:w-10 lg:h-12 lg:w-12 xl:h-12 xl:w-12 2xl:h-20 2xl:w-20 xl:mr-3 2xl:mr-3 3xl:mr-3 3xl:mt-[53px] 3xl:ml-[126px] 2xl:mt-[53px] 2xl:ml-[126px] xl:mt-[43px] xl:ml-[66px] lg:mt-[33px] lg:ml-[66px]" />
               <p className="text-white text-center text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl font-normal leading-normal 3xl:mt-[53px] 3xl:mr-[503px] 2xl:mt-[53px] 2xl:mr-[413px] xl:mt-[43px] xl:mr-[340px] lg:mt-[33px] lg:mr-[270px] gl:mr-[570px]" >Endless Stories</p>
               </div>
                 <ul className="flex 3xl:mt-[63px] 3xl:mr-[15px] 2xl:mt-[63px] 2xl:mr-[100px] xl:mt-[53px] xl:mr-[1px] lg:mt-[33px] lg:mr-[15px] ">
@@ -104,7 +104,7 @@ function Header () {
           <div className='font-bold sm:text-2xl cursor-pointer flex items-center text-white'>
             <Link href="/">
             <div className='flex items-center md:ml-64 sm:ml-64 xs:ml-32 mt-7'>
-              <Image src={logo} alt="Logo" className="mr-2 md:w-9 md:h-9 sm:w-8 sm:h-8 xs:w-6 xs:h-6 "  /> {/* Replace 'logo.png' with your actual logo image */}
+              <Image src={logo} alt="Logo" className="rounded-full mr-2 md:w-9 md:h-9 sm:w-8 sm:h-8 xs:w-6 xs:h-6 "  /> {/* Replace 'logo.png' with your actual logo image */}
               <h1 className="font-semibold ml-2 md:text-4xl sm:text-4xl xs:text-xl text-white">Endless Stories</h1>
             </div>
             </Link>
