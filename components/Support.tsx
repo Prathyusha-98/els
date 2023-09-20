@@ -12,6 +12,7 @@ import boy from '@/assets/boy.png'
 import Faq from './Faq'
 import { GiHamburgerMenu } from 'react-icons/gi';
 import Ask from './Ask';
+import logo from '@/assets/logo.png'
 const Support = () => {
 
   const [openmenu, setOpenmenu] = useState(false);
@@ -37,9 +38,11 @@ const Support = () => {
       <div className='bg-[#F8F7FF] h-[1224px] md:hidden sm:hidden xs:hidden lg:block '>
         {/***********************************  Header start ********************************** */}
         <div className="lg:flex md:hidden sm:hidden xs:hidden absolute top-0 ">
-                  <p className="text-black text-center text-sm lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl font-normal leading-normal 3xl:mt-[53px] 3xl:mr-[513px] 3xl:ml-[126px]  2xl:mt-[53px] 2xl:mr-[413px] 2xl:ml-[126px] xl:mt-[43px] xl:mr-[370px] xl:ml-[66px] lg:mt-[33px] lg:mr-[270px] lg:ml-[66px] " >Endless Stories</p>
-              
-              <ul className="flex 3xl:mt-[63px] 3xl:mr-[15px] 2xl:mt-[63px] 2xl:mr-[100px] xl:mt-[43px] xl:mr-[1px] lg:mt-[33px] lg:mr-[15px] md:mt-[0px]">
+               <div className="flex items-center"> {/* Add a containing div for the logo and text */}
+              <Image src={logo} alt="Logo" className="rounded-full h-6 w-6 md:h-10 md:w-10 lg:h-12 lg:w-12 xl:h-12 xl:w-12 2xl:h-20 2xl:w-20 xl:mr-3 2xl:mr-3 3xl:mr-3 3xl:mt-[43px] 3xl:ml-[46px] 2xl:mt-[53px] 2xl:ml-[89px] xl:mt-[43px] xl:ml-[66px] lg:mt-[33px] lg:ml-[66px]" />
+              <p className="text-black text-center text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl font-normal leading-normal 3xl:mt-[53px] 3xl:mr-[503px] 2xl:mt-[53px] 2xl:mr-[413px] xl:mt-[43px] xl:mr-[340px] lg:mt-[33px] lg:mr-[270px] gl:mr-[570px]" >Endless Stories</p>
+              </div>
+              <ul className="flex 3xl:mt-[73px] 3xl:mr-[15px] 2xl:mt-[83px] 2xl:mr-[100px] xl:mt-[53px] xl:mr-[1px] lg:mt-[33px] lg:mr-[15px] md:mt-[0px]">
                   <li><Link  className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-black leading-normal' href="/">Home</Link></li>
                   <li ><Link className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-black leading-normal' href={"/#how"}>How it works</Link></li>
                   <li ><Link className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-black leading-normal' href={"/#see"}>See it in action</Link></li>
@@ -51,7 +54,7 @@ const Support = () => {
 
         <div className='relative'>
             <div>
-                <Image src={subu} alt='' className='absolute xl:top-[149px] 2xl:top-[168px] 3xl:top-[213px] xl:left-[939px] 2xl:left-[1209px] 3xl:left-[1399px] lg:top-[168px] lg:left-[700px] gl:left-[1150px] md:w-[94px] md:h-[74px] md:left-[668px] md:top-[168px]'/>
+                <Image src={subu} alt='' className='absolute xl:top-[149px] 2xl:top-[168px] 3xl:top-[213px] xl:left-[1049px] xl:w-[200px] xl:h-[200px] 2xl:left-[1209px] 3xl:left-[1399px] lg:top-[168px] lg:left-[700px] gl:left-[1150px] md:w-[94px] md:h-[74px] md:left-[668px] md:top-[168px]'/>
                 <Image src={boy} alt='' className='absolute top-[837px]'/>
             </div>
         </div>
