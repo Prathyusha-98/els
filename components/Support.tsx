@@ -49,7 +49,7 @@ const Support = () => {
                     <li ><Link className='p-[14px] lg:p-[10px] text-center 3xl:text-xl font-normal text-black leading-normal' href={"/#see"}>See it in action</Link></li>
                     <li ><Link className='p-[14px] lg:p-[10px] text-center 3xl:text-xl font-normal text-black leading-normal'  href={"/support"}>Support</Link></li>
                     <li ><Link className='p-[14px] lg:p-[10px] text-center 3xl:text-xl font-normal text-black leading-normal'  href={'/#contact'}>Contact</Link></li>
-                    <li ><Link className='p-[14px] lg:p-[10px] text-center 3xl:text-xl font-normal text-black leading-normal'  href={'/privacy'}>PrivacyPolicy</Link></li>
+                   <li ><Link className='p-[14px] lg:p-[10px] text-center 3xl:text-xl font-normal text-black leading-normal'  href={'/privacy'}>PrivacyPolicy</Link></li>
                 </ul>
           </div>
         {/********************************** Header end ******************************/}
