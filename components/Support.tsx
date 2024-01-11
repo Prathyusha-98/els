@@ -13,6 +13,7 @@ import Faq from './Faq'
 import { GiHamburgerMenu } from 'react-icons/gi';
 import Ask from './Ask';
 import logo from '@/assets/logo.png'
+import HeaderMobile from '@/components/HeaderMobile';
 const Support = () => {
 
   const [openmenu, setOpenmenu] = useState(false);
@@ -36,20 +37,22 @@ const Support = () => {
         
         <div>
       <div className='bg-[#F8F7FF] h-[1224px] md:hidden sm:hidden xs:hidden lg:block '>
-        {/***********************************  Header start ********************************** */}
-        <div className="lg:flex md:hidden sm:hidden xs:hidden absolute top-0 ">
-               <div className="flex items-center"> {/* Add a containing div for the logo and text */}
-              <Image src={logo} alt="Logo" className="rounded-full h-6 w-6 md:h-10 md:w-10 lg:h-12 lg:w-12 xl:h-12 xl:w-12 2xl:h-20 2xl:w-20 xl:mr-3 2xl:mr-3 3xl:mr-3 3xl:mt-[43px] 3xl:ml-[46px] 2xl:mt-[53px] 2xl:ml-[89px] xl:mt-[43px] xl:ml-[66px] lg:mt-[33px] lg:ml-[66px]" />
+          {/***********************************  Header start for screen size >768px ********************************** */}
+          <div className="lg:flex absolute top-0 md:hidden">
+              <div className="flex items-center"> {/* Add a containing div for the logo and text */}
+              <Image src={logo} alt="Logo" className="rounded-full h-6 w-6 md:h-10 md:w-10 lg:h-12 lg:w-12 xl:h-12 xl:w-12 2xl:h-20 2xl:w-20 xl:mr-3 2xl:mr-3 3xl:mr-3 3xl:mt-[53px] 3xl:ml-[126px] 2xl:mt-[53px] 2xl:ml-[126px] xl:mt-[43px] xl:ml-[16px] lg:mt-[33px] lg:ml-[66px]" />
               <p className="text-black text-center text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl font-normal leading-normal 3xl:mt-[53px] 3xl:mr-[503px] 2xl:mt-[53px] 2xl:mr-[413px] xl:mt-[43px] xl:mr-[340px] lg:mt-[33px] lg:mr-[270px] gl:mr-[570px]" >Endless Stories</p>
               </div>
-              <ul className="flex 3xl:mt-[73px] 3xl:mr-[15px] 2xl:mt-[83px] 2xl:mr-[100px] xl:mt-[53px] xl:mr-[1px] lg:mt-[33px] lg:mr-[15px] md:mt-[0px]">
-                  <li><Link  className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-black leading-normal' href="/">Home</Link></li>
-                  <li ><Link className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-black leading-normal' href={"/#how"}>How it works</Link></li>
-                  <li ><Link className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-black leading-normal' href={"/#see"}>See it in action</Link></li>
-                  <li ><Link className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-black leading-normal'  href={"/#support"}>Support</Link></li>
-                  <li ><Link className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-black leading-normal'  href={"/#contact"}>contact</Link></li>
-              </ul>
-        </div>
+                <ul className="flex 3xl:mt-[73px] 3xl:mr-[15px] 2xl:mt-[63px] 2xl:mr-[100px] xl:mt-[53px] xl:mr-[1px] lg:mt-[33px] lg:mr-[15px] ">
+                    <li><Link  className='p-[14px] lg:p-[10px] text-center 3xl:text-xl font-normal text-black leading-normal' href="/">Home</Link></li>
+                    <li ><Link className='p-[14px] lg:p-[10px] text-center 3xl:text-xl font-normal text-black leading-normal' href={"/#how"}>How it works</Link></li>
+                    <li ><Link className='p-[14px] lg:p-[10px] text-center 3xl:text-xl font-normal text-black leading-normal' href={"/#see"}>See it in action</Link></li>
+                    <li ><Link className='p-[14px] lg:p-[10px] text-center 3xl:text-xl font-normal text-black leading-normal'  href={"/support"}>Support</Link></li>
+                    <li ><Link className='p-[14px] lg:p-[10px] text-center 3xl:text-xl font-normal text-black leading-normal'  href={'/#contact'}>Contact</Link></li>
+                    <li ><Link className='p-[14px] lg:p-[10px] text-center 3xl:text-xl font-normal text-black leading-normal'  href={'/privacy'}>PrivacyPolicy</Link></li>
+                </ul>
+          </div>
+        {/********************************** Header end ******************************/}
         {/********************************** Header end ******************************/}
 
         <div className='relative'>
@@ -84,46 +87,14 @@ const Support = () => {
 
     {/**************************** Ask us mobile anything start **************************************/}
       <div id='service' className=' bg-[#F8F7FF] lg:hidden md:block sm:block xs:block'>
-      <div className='z-50 w-full static'>
-        <div className='items-center justify-between flex bg-transparent pt-4 px-2 pb-14'>
-          <div className='font-bold sm:text-2xl cursor-pointer flex items-center text-white'>
-            <Link href="/">
-              <div className='flex items-center md:ml-64 sm:ml-64 xs:ml-32 mt-7'>
-                <h1 className="font-semibold ml-2 md:text-4xl sm:text-4xl xs:text-xl text-black">Endless Stories</h1>
-              </div>
-            </Link>
-          </div>
-          <div onClick={() => setOpenmenu(!openmenu)} className='text-3xl absolute  pl-8 top-10 cursor-pointer'>
-            <GiHamburgerMenu className='fill-black  w-10 h-8' name={openmenu ? 'close' : 'menu'} />
-          </div>
-
-          <ul className={` items-center pb-12 absolute  bg-white z-[-1] left-0 md:w-[516px] md:h-[1423px] sm:w-[516px] sm:h-[1423px] xs:w-[291px] xs:h-[800px] pl-9 transition-all duration-500 ease-in ${openmenu ? 'top-0 ' : 'top-[-1680px]'}`}>
-            <li className="mx-6 my-6 md:my-0">
-              <Link href={'/'} className="text-black  hover:font-bold hover:underline underline-offset-8 block p-2 text-sm font-semibold pr-10   " >Home</Link>
-            </li>
-            <li className="mx-6 my-6 md:my-0">
-              <Link href={"/#how"} className="text-black hover:font-bold hover:underline underline-offset-8 block p-2 text-sm font-semibold pr-10   " >How it works</Link>
-            </li>
-            <li className="mx-6 my-6 md:my-0">
-              <Link href={'/#see'} className="text-black  hover:font-bold hover:underline underline-offset-8 block p-2 text-sm font-semibold pr-10   " >See it in action</Link>
-            </li>
-            <li className="mx-6 my-6 md:my-0">
-              <Link href={'/support'} className="text-black hover:font-bold hover:underline underline-offset-8 block p-2 text-sm font-semibold pr-10   " >Support</Link>
-            </li>
-            <li className="mx-6 my-6 md:my-0">
-              <Link href={'/#contact'} className="text-black hover:font-bold hover:underline underline-offset-8 block p-2 text-sm font-semibold pr-10   " >Contact</Link>
-            </li>
-
-          </ul>
-        </div>
-      </div>
+      <HeaderMobile/>
 
         <div className='relative'>
             <div>
                 <Image src={subu} alt='' className='absolute w-[94px] h-[74px] top-[123px] xs:left-[280px] sm:left-[560px] md:left-[670px]'/>
             </div>
         </div>
-        <div  ><p className='text-4xl text-[#053445] text-center font-semibold'>FAQs</p></div>
+        <div className='pt-36 lg:pt-0' ><p className='text-4xl text-[#053445] text-center font-semibold'>FAQs</p></div>
 
         <div className='flex md:pl-56 sm:pl-36 xs:pl-2 lg:pl-56 pl-0'>
           <div className='pt-12'>

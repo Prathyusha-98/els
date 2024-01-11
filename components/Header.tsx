@@ -1,5 +1,5 @@
 'use client'
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import Image from 'next/image';
 import heroboy from '@/assets/heroboy.png';
 import Link from 'next/link';
@@ -9,8 +9,32 @@ import Stars from './Stars';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import boygroup from '@/assets/boygroup.png'
 import logo from '@/assets/logo.png'
+import HeaderMobile from '@/components/HeaderMobile';
+
 function Header () {
   const [openmenu, setOpenmenu] = useState(false);
+  const [hideOnScroll, setHideOnScroll] = useState(false);
+  const menuRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setOpenmenu(false);
+      }
+    };
+
+    const handleScroll = () => {
+      setHideOnScroll(window.pageYOffset > 50);
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     const handleClick = (e: any) => {
@@ -74,17 +98,19 @@ function Header () {
           {/***********************************  Header start for screen size >768px ********************************** */}
           <div className="lg:flex absolute top-0 md:hidden">
               <div className="flex items-center"> {/* Add a containing div for the logo and text */}
-              <Image src={logo} alt="Logo" className="rounded-full h-6 w-6 md:h-10 md:w-10 lg:h-12 lg:w-12 xl:h-12 xl:w-12 2xl:h-20 2xl:w-20 xl:mr-3 2xl:mr-3 3xl:mr-3 3xl:mt-[53px] 3xl:ml-[126px] 2xl:mt-[53px] 2xl:ml-[126px] xl:mt-[43px] xl:ml-[66px] lg:mt-[33px] lg:ml-[66px]" />
+              <Image src={logo} alt="Logo" className="rounded-full h-6 w-6 md:h-10 md:w-10 lg:h-12 lg:w-12 xl:h-12 xl:w-12 2xl:h-20 2xl:w-20 xl:mr-3 2xl:mr-3 3xl:mr-3 3xl:mt-[53px] 3xl:ml-[126px] 2xl:mt-[53px] 2xl:ml-[126px] xl:mt-[43px] xl:ml-[16px] lg:mt-[33px] lg:ml-[66px]" />
               <p className="text-white text-center text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl font-normal leading-normal 3xl:mt-[53px] 3xl:mr-[503px] 2xl:mt-[53px] 2xl:mr-[413px] xl:mt-[43px] xl:mr-[340px] lg:mt-[33px] lg:mr-[270px] gl:mr-[570px]" >Endless Stories</p>
               </div>
-                <ul className="flex 3xl:mt-[63px] 3xl:mr-[15px] 2xl:mt-[63px] 2xl:mr-[100px] xl:mt-[53px] xl:mr-[1px] lg:mt-[33px] lg:mr-[15px] ">
-                    <li><Link  className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-white leading-normal' href="/">Home</Link></li>
-                    <li ><Link className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-white leading-normal' href={"/#how"}>How it works</Link></li>
-                    <li ><Link className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-white leading-normal' href={"/#see"}>See it in action</Link></li>
-                    <li ><Link className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-white leading-normal'  href={"/support"}>Support</Link></li>
-                    <li ><Link className='3xl:p-[26px] 2xl:p-[20px] xl:p-[16px] lg:p-[10px] text-center 3xl:text-xl font-normal text-white leading-normal'  href={'/#contact'}>Contact</Link></li>
+                <ul className="flex 3xl:mt-[73px] 3xl:mr-[15px] 2xl:mt-[63px] 2xl:mr-[100px] xl:mt-[53px] xl:mr-[1px] lg:mt-[33px] lg:mr-[15px] ">
+                    <li><Link  className='p-[14px] lg:p-[10px] text-center 3xl:text-xl font-normal text-white leading-normal' href="/">Home</Link></li>
+                    <li ><Link className='p-[14px] lg:p-[10px] text-center 3xl:text-xl font-normal text-white leading-normal' href={"/#how"}>How it works</Link></li>
+                    <li ><Link className='p-[14px] lg:p-[10px] text-center 3xl:text-xl font-normal text-white leading-normal' href={"/#see"}>See it in action</Link></li>
+                    <li ><Link className='p-[14px] lg:p-[10px] text-center 3xl:text-xl font-normal text-white leading-normal'  href={"/support"}>Support</Link></li>
+                    <li ><Link className='p-[14px] lg:p-[10px] text-center 3xl:text-xl font-normal text-white leading-normal'  href={'/#contact'}>Contact</Link></li>
+                    <li ><Link className='p-[14px] lg:p-[10px] text-center 3xl:text-xl font-normal text-white leading-normal'  href={'/privacy'}>PrivacyPolicy</Link></li>
                 </ul>
           </div>
+        {/********************************** Header end ******************************/}
           
           {/********************************** Header end for screen size >768px******************************/}
         </div>
@@ -99,21 +125,24 @@ function Header () {
 
         <div className='relative bg-uni w-full md:h-[1423px] sm:h-[1423px] xs:h-[800px] lg:hidden md:block xs:block'>
           <div>
-        <div className='z-50 w-full sticky'>
-        <div className='items-center justify-between flex bg-transparent pt-4 px-2 pb-14'>
-          <div className='font-bold sm:text-2xl cursor-pointer flex items-center text-white'>
-            <Link href="/">
-            <div className='flex items-center md:ml-64 sm:ml-64 xs:ml-32 mt-7'>
-              <Image src={logo} alt="Logo" className="rounded-full mr-2 md:w-9 md:h-9 sm:w-8 sm:h-8 xs:w-6 xs:h-6 "  /> {/* Replace 'logo.png' with your actual logo image */}
-              <h1 className="font-semibold ml-2 md:text-4xl sm:text-4xl xs:text-xl text-white">Endless Stories</h1>
-            </div>
-            </Link>
-          </div>
-          <div onClick={() => setOpenmenu(!openmenu)} className='text-3xl absolute  pl-8 top-10 cursor-pointer'>
-            <GiHamburgerMenu className='fill-white  w-10 h-8' name={openmenu ? 'close' : 'menu'} />
-          </div>
-
-          <ul className={` items-center pb-12 absolute  bg-white z-[-1] left-0 md:w-[516px] md:h-[1423px] sm:w-[516px] sm:h-[1423px] xs:w-[291px] xs:h-[800px] pl-9 transition-all duration-500 ease-in ${openmenu ? 'top-0 ' : 'top-[-1680px]'}`}>
+          <header ref={menuRef} className={`fixed top-0 left-0 right-0 lg:hidden sm:block ${openmenu ? 'z-20' : 'z-10'} ${hideOnScroll ? 'hidden' : ''}`}>
+      <div className="flex justify-between items-center px-8 pt-3">
+        <div className="flex items-center">
+          <Link className="flex items-center" href="/">
+            <button>
+              <Image src={logo} alt="Logo" className="w-[38px] h-[38px] rounded-full" />
+            </button>
+            <h1 className="font-semibold ml-2 md:text-4xl sm:text-xl xs:text-xl text-white">Endless Stories</h1>
+          </Link>
+        </div>
+        <div className="flex items-center">
+          <button onClick={() => setOpenmenu(!openmenu)} className="text-3xl cursor-pointer">
+            <GiHamburgerMenu className="fill-white w-[20px] h-[14px]" name={openmenu ? 'close' : 'menu'} />
+          </button>
+        </div>
+      </div>
+      {openmenu && (
+        <ul className="fixed top-[0px] bg-white w-[80%] h-[calc(100vh-76px)] z-10 p-4 shadow-md overflow-y-auto">
             <li className="mx-6 my-6 md:my-0">
               <Link href={'/'} className="text-black  hover:font-bold hover:underline underline-offset-8 block p-2 text-sm font-semibold pr-10   " >Home</Link>
             </li>
@@ -129,10 +158,13 @@ function Header () {
             <li className="mx-6 my-6 md:my-0">
               <Link href={'/#contact'} className="text-black hover:font-bold hover:underline underline-offset-8 block p-2 text-sm font-semibold pr-10   " >Contact</Link>
             </li>
+            <li className="mx-6 my-6 md:my-0">
+              <Link href={'/privacy'} className="text-black hover:font-bold hover:underline underline-offset-8 block p-2 text-sm font-semibold pr-10   " >Privacy Policy</Link>
+            </li>
+        </ul>
+      )}
+    </header>
 
-          </ul>
-        </div>
-      </div>
         <div className=' items-center justify-center sm:pt-24 md:pt-24 xs:pt-0'>
           <Image src={boygroup} alt='' />
           <div className='flex items-center justify-center sm:pt-28 lg:pt-28 xs:pt-10'>
