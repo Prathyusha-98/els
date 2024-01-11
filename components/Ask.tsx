@@ -7,6 +7,7 @@ import cloud2 from "@/assets/cloud2.png"
 import Vector7 from "@/assets/Vector7.png"
 import Vector6 from "@/assets/Vector6.png"
 import path from "@/assets/Path.png"
+import Link from 'next/link';
 
 const Ask = () => {
 
@@ -137,7 +138,7 @@ const Ask = () => {
         </div>
 
         <div className='h-[61px] bg-[#D5DAFF]'>
-          <p className="pt-[23px] text-[var(--dark,#0A142F)] text-center font-normal text-xs leading-normal">© Copyright 2023 - Endless Stories</p>
+          <p className="pt-[23px] text-[var(--dark,#0A142F)] text-center font-normal text-xs leading-normal">© Copyright 2023 - Endless Stories      <span className='ml-4 underline-offset-2 underline'><Link href='/privacy'>Privacy Policy</Link></span> </p>
         </div>
         </>
     )

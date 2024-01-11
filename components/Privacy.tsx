@@ -102,7 +102,7 @@ const Privacy = () =>{
     }, []);
     return(
         <>
-          <div className="lg:flex absolute top-0 md:hidden">
+          <div className="lg:flex absolute top-0 hidden">
               <div className="flex items-center"> {/* Add a containing div for the logo and text */}
               <Image src={logo} alt="Logo" className="rounded-full h-6 w-6 md:h-10 md:w-10 lg:h-12 lg:w-12 xl:h-12 xl:w-12 2xl:h-20 2xl:w-20 xl:mr-3 2xl:mr-3 3xl:mr-3 3xl:mt-[53px] ml-[16px] lg:mt-[33px] " />
               <p className="text-black text-center text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl font-normal leading-normal 3xl:mt-[53px] 3xl:mr-[503px] 2xl:mt-[53px] 2xl:mr-[413px] xl:mt-[43px] xl:mr-[340px] lg:mt-[33px] lg:mr-[270px] gl:mr-[570px]" >Endless Stories</p>
@@ -122,10 +122,10 @@ const Privacy = () =>{
       <HeaderMobile/>
       </div>
       <div className='items-center justify-center flex pt-36'>
-        <div id="privacy" className=' text-[[#0C0D17]] text-2xl md:text-8xl lg:text-8xl font-semibold mb-8 md:mb-16 lg:mb-16'>Privacy Statement</div>
+        <div id="privacy" className=' text-[#0C0D17] text-2xl md:text-8xl lg:text-8xl font-semibold mb-8 md:mb-16 lg:mb-16'>Privacy Statement</div>
       </div>
       <div className='mx-4 md:mx:12 lg:mx-12 md:mb-56 lg:mb-56 mb-20'>
-        <div className='w-full h-full  text-[#0C0D17]leading-relaxed font-sans'>
+        <div className='w-full h-full  text-[#0C0D17] leading-relaxed font-sans'>
         <h1 className="md:text-6xl lg:text-6xl text-2xl py-6 text-[#0C0D17]">Privacy Notice</h1>
         <p className='text-sm md:text-2xl lg:text-2xl '>Last updated <span className='text-xl md:text-4xl lg:text-4xl'>October 14, 2022</span></p>
         <p className='text-sm md:text-2xl lg:text-2xl '>This privacy notice for EndlessStories (&apos;Company&apos;, &apos;we&apos;, &apos;us&apos;, or &apos;our&apos;,), describes how and why we might collect, store, use, and/or share (‘process‘) your information when you use our services</p>
